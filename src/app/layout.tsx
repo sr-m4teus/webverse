@@ -26,11 +26,13 @@ export const metadata: Metadata = {
     siteName: site.nome,
     title: site.titulo,
     description: site.descricao,
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Webverse: Seu negócio já tem um planeta nesse universo?" }],
   },
   twitter: {
     card: "summary_large_image",
     title: site.titulo,
     description: site.descricao,
+    images: ["/og.png"],
   },
   formatDetection: { telephone: false },
 };
@@ -49,7 +51,7 @@ const jsonLd = {
   description: site.descricao,
   url: site.dominio,
   logo: `${site.dominio}/brand/simbolo.svg`,
-  image: `${site.dominio}/opengraph-image.png`,
+  image: `${site.dominio}/og.png`,
   email: site.email,
   sameAs: [site.instagram],
   areaServed: "BR",
