@@ -60,6 +60,8 @@ export const extras: Extra[] = [
 
 export const manutencao = {
   nome: "Manutenção",
+  /** Mostra o selo "OPCIONAL" ao lado do nome. */
+  opcional: true,
   preco: 69,
   periodo: "/mês",
   inclui: ["Hospedagem", "Domínio sempre em dia", "Até 2 alterações por mês"],

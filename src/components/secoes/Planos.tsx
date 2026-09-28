@@ -87,6 +87,11 @@ export function Planos() {
           <h3 className="flex items-center gap-3 font-titulo text-xl font-extrabold">
             <Wrench className="size-6 text-orbita" aria-hidden="true" />
             {manutencao.nome}
+            {manutencao.opcional && (
+              <Selo barras={false} className="ml-1">
+                OPCIONAL
+              </Selo>
+            )}
           </h3>
           <p className="mt-2 text-texto-suave">{t.manutencaoSubtitulo}</p>
           <p className="mt-5 flex items-baseline gap-1">

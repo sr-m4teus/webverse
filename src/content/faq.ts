@@ -22,11 +22,11 @@ export const faq: Pergunta[] = [
   {
     pergunta: "Posso pedir alterações depois?",
     resposta:
-      "Pode sim! Cada plano inclui de 1 a 3 rodadas de ajustes antes da entrega. Depois que o site está no ar, a manutenção (R$ 69/mês) cobre até 2 alterações por mês.",
+      "Pode sim! Cada plano inclui de 1 a 3 rodadas de ajustes antes da entrega. Depois que o site está no ar, a manutenção opcional (R$ 69/mês) cobre até 2 alterações por mês.",
   },
   {
     pergunta: "Quanto custa?",
     resposta:
-      "Os planos vão de R$ 997 a R$ 2.797, com pagamento único: 50% no início e 50% na entrega, no Pix. O domínio fica no seu nome e é pago por você. Na dúvida, chama no WhatsApp que a gente te ajuda a escolher.",
+      "Os planos vão de R$ 997 a R$ 2.797, com pagamento único e sem mensalidade obrigatória: 50% no início e 50% na entrega, no Pix. O domínio fica no seu nome e é pago por você. Na dúvida, chama no WhatsApp que a gente te ajuda a escolher.",
   },
 ];

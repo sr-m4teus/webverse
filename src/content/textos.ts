@@ -76,7 +76,7 @@ export const depoimentosTextos = {
 export const planosTextos = {
   selo: "PLANOS",
   titulo: ["Quanto custa entrar em ", { destaque: "órbita?" }] as Trecho[],
-  subtitulo: "Pagamento único, sem surpresa. Escolhe o plano e chama no WhatsApp.",
+  subtitulo: "Pagamento único, sem mensalidade obrigatória. Escolhe o plano e chama no WhatsApp.",
   semPreco: "Orçamento pelo WhatsApp: resposta rápida e sem compromisso",
   pagamentoUnico: "pagamento único",
   prazo: (dias: number) => `NO AR EM ${dias} DIAS`,
