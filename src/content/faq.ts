@@ -20,7 +20,7 @@ export const faq: Pergunta[] = [
   },
   {
     pergunta: "Posso pedir alterações depois?",
-    resposta: "[DEFINIR POLÍTICA DE ALTERAÇÕES]", // TODO
+    resposta: "Pode sim! A gente aceita pedidos de alteração, mas o que entra depende do plano contratado. Confira os planos!",
   },
   {
     pergunta: "Quanto custa?",

@@ -1,9 +1,5 @@
 # Pendências antes de publicar
 
-## Obrigatório
-
-- [ ] **Política de alterações**: `src/content/faq.ts` → resposta de "Posso pedir alterações depois?" (hoje: `[DEFINIR POLÍTICA DE ALTERAÇÕES]`).
-
 ## Quando tiver
 
 - [ ] **Preço**: `src/content/planos.ts` → `preco: null`. Enquanto for `null`, aparece "Orçamento pelo WhatsApp". Revise também o `nome`, a `descricao` e a lista `inclui` do plano.
