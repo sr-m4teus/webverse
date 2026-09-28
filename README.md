@@ -157,7 +157,7 @@ A cada `git push` na branch `main`, a Vercel publica de novo automaticamente.
 
 **Alternativa:** delegar o DNS inteiro para a Vercel. No Registro.br, em **Alterar servidores DNS**, informe `ns1.vercel-dns.com` e `ns2.vercel-dns.com`. Aí a Vercel gerencia tudo, mas registros de e-mail (MX) passam a ser criados na Vercel também.
 
-> **E-mail:** se `contato@usewebverse.com.br` for usar um provedor (Google Workspace, Zoho, ImprovMX etc.), crie também os registros `MX`/`TXT` que o provedor pedir, na mesma zona DNS.
+> **E-mail:** hoje o site usa `usewebverse@gmail.com`, que não depende do DNS. Se um dia quiser um e-mail no domínio (ex.: `contato@usewebverse.com.br`), crie os registros `MX`/`TXT` que o provedor pedir, na mesma zona DNS.
 
 ### 4. Conferir depois do deploy
 

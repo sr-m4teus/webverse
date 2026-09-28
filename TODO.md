@@ -3,7 +3,6 @@
 ## Obrigatório
 
 - [ ] **Número do WhatsApp**: `src/config/site.ts` → `whatsapp: "55XXXXXXXXXXX"`. Só números, com DDI 55 + DDD + número.
-- [ ] **E-mail**: `src/config/site.ts` → `email`. Confirmar se `contato@usewebverse.com.br` existe e recebe mensagens (precisa de provedor de e-mail + registros MX no DNS).
 - [ ] **Política de alterações**: `src/content/faq.ts` → resposta de "Posso pedir alterações depois?" (hoje: `[DEFINIR POLÍTICA DE ALTERAÇÕES]`).
 
 ## Quando tiver

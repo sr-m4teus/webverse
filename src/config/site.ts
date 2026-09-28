@@ -5,7 +5,7 @@ export const site = {
   instagramHandle: "@usewebverse",
   whatsapp: "55XXXXXXXXXXX", // TODO: preencher com DDI+DDD+número
   mensagemWhatsapp: "Oi! Vim pelo site e quero colocar meu negócio em órbita 🪐",
-  email: "contato@usewebverse.com.br", // TODO: confirmar
+  email: "usewebverse@gmail.com",
   prazoDias: 7,
 
   titulo: "Webverse | Sites para quem empreende",
