@@ -1,26 +1,123 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Tokens da marca: viram classes do Tailwind (bg-fundo, text-orbita...)
+   e CSS variables (var(--color-fundo)...). */
+@theme {
+  --color-fundo: #0b0d14;
+  --color-superficie: #151925;
+  --color-linha: #2a3042;
+  --color-texto: #f4f3ee;
+  --color-texto-suave: #a4a9b8;
+  --color-orbita: #ccff3d;
+  --color-on-orbita: #0b0d14;
+  --color-cometa: #ff5b3a;
+  --color-sinal: #4fe3e6;
+
+  --font-titulo: var(--fonte-unbounded), system-ui, sans-serif;
+  --font-texto: var(--fonte-manrope), system-ui, sans-serif;
+  --font-mono: var(--fonte-jetbrains), ui-monospace, monospace;
+
+  --radius-cartao: 12px;
+  --radius-bloco: 20px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: var(--color-fundo);
+    color: var(--color-texto);
+    font-family: var(--font-texto);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-orbita);
+    color: var(--color-on-orbita);
+  }
+
+  /* Foco visível: anel 2px, afastamento 2px, cor orbita. */
+  :focus-visible {
+    outline: 2px solid var(--color-orbita);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Em fundo orbita, o anel usa a cor escura para continuar visível. */
+  .fundo-orbita :focus-visible {
+    outline-color: var(--color-on-orbita);
+  }
+
+  summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  summary::-webkit-details-marker {
+    display: none;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .titulo {
+    font-family: var(--font-titulo);
+    font-weight: 800;
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+}
+
+/* Satélite orbitando o anel do planeta. */
+@keyframes orbitar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes contra-orbitar {
+  from {
+    transform: rotate(0deg) scale(1, 3.1111);
+  }
+  to {
+    transform: rotate(-360deg) scale(1, 3.1111);
+  }
+}
+/* O anel é uma elipse: o giro acontece num círculo achatado e o
+   contra-giro desfaz o achatamento para o satélite continuar redondo. */
+.satelite-giro {
+  transform-box: view-box;
+  transform-origin: 32px 32px;
+  animation: orbitar 28s linear infinite;
+}
+.satelite-contra {
+  transform-box: view-box;
+  transform: scale(1, 3.1111);
+  animation: contra-orbitar 28s linear infinite;
+}
+
+@keyframes piscar {
+  50% {
+    opacity: 0;
+  }
+}
+.cursor-piscando {
+  animation: piscar 1.1s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
