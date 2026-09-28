@@ -7,7 +7,7 @@ export const hero = {
   selo: "NOVO NO UNIVERSO",
   titulo: ["Seu negócio já tem um ", { destaque: "planeta" }, " nesse universo?"] as Trecho[],
   subtitulo:
-    "A gente cria sites para quem empreende. Com a cara do seu negócio, no ar em até 7 dias e sem complicação.",
+    "A gente cria sites para quem empreende. Com a cara do seu negócio, no ar a partir de 7 dias e sem complicação.",
   botaoPrimario: "Chama no WhatsApp",
   botaoSecundario: "Ver como funciona",
 };
@@ -42,7 +42,7 @@ export const comoFunciona = {
   fases: [
     { titulo: "Você chama no WhatsApp", texto: "Conta do seu negócio e do que precisa." },
     { titulo: "Manda fotos e infos", texto: "Logo, fotos, horários, cardápio ou serviços." },
-    { titulo: "Seu site em órbita", texto: "No ar em até 7 dias. Missão cumprida." },
+    { titulo: "Seu site em órbita", texto: "No ar a partir de 7 dias. Missão cumprida." },
   ],
 };
 
@@ -76,8 +76,15 @@ export const depoimentosTextos = {
 export const planosTextos = {
   selo: "PLANOS",
   titulo: ["Quanto custa entrar em ", { destaque: "órbita?" }] as Trecho[],
+  subtitulo: "Pagamento único, sem surpresa. Escolhe o plano e chama no WhatsApp.",
   semPreco: "Orçamento pelo WhatsApp: resposta rápida e sem compromisso",
-  botao: "Pedir orçamento",
+  pagamentoUnico: "pagamento único",
+  prazo: (dias: number) => `NO AR EM ${dias} DIAS`,
+  botao: (plano: string) => `Quero o ${plano}`,
+  mensagem: (plano: string) => `Oi! Vim pelo site e quero o plano ${plano} 🪐`,
+  extrasTitulo: "Extras",
+  extrasSubtitulo: "Adicione a qualquer plano.",
+  manutencaoSubtitulo: "Pra você não se preocupar com nada depois que o site estiver no ar.",
 };
 
 export const duvidas = {
@@ -88,7 +95,7 @@ export const duvidas = {
 export const ctaFinal = {
   selo: "PRESS START",
   titulo: ["Bora colocar seu negócio em órbita?"] as Trecho[],
-  texto: "Chama a gente no WhatsApp. Em até 7 dias seu site está no ar.",
+  texto: "Chama a gente no WhatsApp. Seu site pode estar no ar a partir de 7 dias.",
   botaoWhatsapp: "Chama no WhatsApp",
   botaoInstagram: "Segue no Instagram",
 };

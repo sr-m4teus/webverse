@@ -7,7 +7,8 @@ export const faq: Pergunta[] = [
   },
   {
     pergunta: "Em quanto tempo fica pronto?",
-    resposta: "Em até 7 dias depois que a gente recebe suas fotos e informações.",
+    resposta:
+      "Depende do plano: 7 dias no Órbita Baixa, 14 no Órbita e 21 no Galáxia, contados a partir de quando a gente recebe suas fotos e informações. Tem entrega expressa, na metade do prazo, por +30%.",
   },
   {
     pergunta: "O site funciona no celular?",
@@ -20,10 +21,12 @@ export const faq: Pergunta[] = [
   },
   {
     pergunta: "Posso pedir alterações depois?",
-    resposta: "Pode sim! A gente aceita pedidos de alteração, mas o que entra depende do plano contratado. Confira os planos!",
+    resposta:
+      "Pode sim! Cada plano inclui de 1 a 3 rodadas de ajustes antes da entrega. Depois que o site está no ar, a manutenção (R$ 69/mês) cobre até 2 alterações por mês.",
   },
   {
     pergunta: "Quanto custa?",
-    resposta: "Depende do que seu negócio precisa. Chama no WhatsApp que a gente te passa um orçamento rapidinho.",
+    resposta:
+      "Os planos vão de R$ 997 a R$ 2.797, com pagamento único: 50% no início e 50% na entrega, no Pix. O domínio fica no seu nome e é pago por você. Na dúvida, chama no WhatsApp que a gente te ajuda a escolher.",
   },
 ];

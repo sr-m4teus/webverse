@@ -10,7 +10,7 @@ export const site = {
 
   titulo: "Webverse | Sites para quem empreende",
   descricao:
-    "Seu negócio no Google, no celular e com botão pro WhatsApp. Site com a sua cara, no ar em até 7 dias.",
+    "Seu negócio no Google, no celular e com botão pro WhatsApp. Site com a sua cara, no ar a partir de 7 dias.",
   slogan: "Sites para quem empreende",
 
   // Analytics: deixe `null` para não carregar nada.
@@ -22,5 +22,8 @@ export const site = {
     | { tipo: "ga"; id: string },
 };
 
-export const linkWhatsapp = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(site.mensagemWhatsapp)}`;
+/** Link do WhatsApp com uma mensagem pronta (padrão: `mensagemWhatsapp`). */
+export const whatsappCom = (mensagem: string) =>
+  `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(mensagem)}`;
+export const linkWhatsapp = whatsappCom(site.mensagemWhatsapp);
 export const linkEmail = `mailto:${site.email}`;

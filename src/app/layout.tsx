@@ -66,6 +66,7 @@ const jsonLd = {
   email: site.email,
   sameAs: [site.instagram],
   areaServed: "BR",
+  priceRange: "R$ 997 - R$ 2.797",
   knowsLanguage: "pt-BR",
 };
 
