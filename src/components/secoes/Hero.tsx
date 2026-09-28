@@ -19,7 +19,9 @@ export function Hero() {
             como="h1"
             id="hero-titulo"
             trechos={hero.titulo}
-            className="mt-6 text-[2.1rem] min-[380px]:text-[2.35rem] min-[400px]:text-[2.5rem] sm:text-[3.4rem] lg:text-[3.25rem] xl:text-[3.6rem]"
+            // min-h reserva a altura final (4 linhas no mobile, 3 no resto) para
+            // o texto não "pular" quando a fonte Unbounded terminar de carregar.
+            className="mt-6 min-h-[4.16em] sm:min-h-[3.12em] text-[2.1rem] min-[380px]:text-[2.35rem] min-[400px]:text-[2.5rem] sm:text-[3.4rem] lg:text-[3.25rem] xl:text-[3.6rem]"
           />
           <p className="mt-6 max-w-xl text-lg text-texto-suave sm:text-xl">{hero.subtitulo}</p>
           <div className="mt-9 flex flex-col gap-3 min-[420px]:flex-row">

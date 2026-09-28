@@ -1,13 +1,24 @@
 import type { Metadata, Viewport } from "next";
-import { JetBrains_Mono, Manrope, Unbounded } from "next/font/google";
+import { JetBrains_Mono, Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import { Analytics } from "@/components/Analytics";
 import { site } from "@/config/site";
 import "./globals.css";
 
-const unbounded = Unbounded({ subsets: ["latin"], variable: "--fonte-unbounded", display: "swap" });
+// Unbounded 800 estática (22 KB) em vez da variável do Google (51 KB): é a
+// fonte do título do hero (LCP), então quanto menor, mais rápido.
+const unbounded = localFont({
+  src: "../../node_modules/@fontsource/unbounded/files/unbounded-latin-800-normal.woff2",
+  weight: "800",
+  variable: "--fonte-unbounded",
+  display: "swap",
+  fallback: ["system-ui", "sans-serif"],
+  adjustFontFallback: "Arial",
+});
 const manrope = Manrope({ subsets: ["latin"], variable: "--fonte-manrope", display: "swap" });
 const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
+  weight: ["500", "700"],
   variable: "--fonte-jetbrains",
   display: "swap",
   preload: false,

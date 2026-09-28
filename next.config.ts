@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
   images: { unoptimized: true },
   trailingSlash: false,
   poweredByHeader: false,
+  // CSS embutido no HTML: elimina a requisição que bloqueia a renderização.
+  experimental: { inlineCss: true },
 };
 
 export default nextConfig;
