@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio Bela | Site de exemplo · Webverse</title>
+<meta name="description" content="Site de exemplo criado pela Webverse para um salão de beleza.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#2E1A2B">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="preload" href="/exemplos/_fontes/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:Playfair;font-weight:600;font-display:swap;src:url(/exemplos/_fontes/playfair-display-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Playfair;font-weight:600;font-style:italic;font-display:swap;src:url(/exemplos/_fontes/playfair-display-latin-600-italic.woff2) format("woff2")}
+@font-face{font-family:Jost;font-weight:400;font-display:swap;src:url(/exemplos/_fontes/jost-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Jost;font-weight:500;font-display:swap;src:url(/exemplos/_fontes/jost-latin-500-normal.woff2) format("woff2")}
+:root{--rosa:#F7E9E4;--rosa2:#EFD5CC;--ameixa:#2E1A2B;--ameixa2:#5A3A55;--cobre:#955442;--cobre2:#C98B7A;--branco:#FFFBF9}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{font-family:Jost,system-ui,sans-serif;background:var(--branco);color:var(--ameixa);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--cobre);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Playfair,Georgia,serif;font-weight:600;line-height:1.08}
+h1 em,h2 em{font-style:italic;color:var(--cobre)}
+
+.wv{background:#0B0D14;color:#F4F3EE;font:600 13px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;text-align:center;padding:9px 16px}
+.wv a{color:#CCFF3D;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.wv a:hover{text-decoration-thickness:2px}
+
+header{position:sticky;top:0;z-index:10;background:rgba(255,251,249,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--rosa2)}
+.topo{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.marca{text-decoration:none;font-family:Playfair,Georgia,serif;font-size:26px;font-weight:600;letter-spacing:.01em}
+.marca em{color:var(--cobre)}
+nav ul{display:flex;gap:30px;list-style:none;font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.1em}
+nav a{text-decoration:none;color:var(--ameixa2)}
+nav a:hover{color:var(--ameixa)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 28px;border-radius:999px;font-weight:500;text-decoration:none;font-size:16px;letter-spacing:.02em;transition:background .15s,color .15s}
+.btn-p{background:var(--ameixa);color:var(--branco)}
+.btn-p:hover{background:var(--ameixa2)}
+.btn-s{border:1.5px solid var(--ameixa);color:var(--ameixa)}
+.btn-s:hover{background:var(--rosa)}
+.btn svg{width:20px;height:20px}
+.topo .btn{min-height:44px;padding:0 20px;font-size:15px}
+
+.hero{background:var(--rosa);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;min-height:560px}
+.hero small,.sec-cab small{display:block;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--cobre);font-weight:500}
+.hero h1{font-size:clamp(44px,6.4vw,76px);margin:16px 0 20px}
+.hero p{font-size:19px;color:var(--ameixa2);max-width:28em}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.nota{display:flex;align-items:center;gap:12px;margin-top:32px;font-size:15px;color:var(--ameixa2)}
+.nota b{font-family:Playfair,Georgia,serif;font-size:30px;color:var(--ameixa);white-space:nowrap}
+.retrato{align-self:end;position:relative;height:100%;min-height:480px;display:flex;align-items:flex-end;justify-content:center}
+.retrato .arco{width:88%;max-width:440px;aspect-ratio:4/5;background:var(--cobre2);border-radius:999px 999px 0 0;position:relative;overflow:hidden}
+.retrato .selo{position:absolute;top:60px;left:0;background:var(--branco);border-radius:18px;padding:14px 18px;box-shadow:0 10px 30px rgba(46,26,43,.12);font-size:14px}
+.retrato .selo b{display:block;font-family:Playfair,Georgia,serif;font-size:20px}
+
+section{padding:88px 0}
+.sec-cab{max-width:620px;margin-bottom:44px}
+.sec-cab h2{font-size:clamp(34px,4.6vw,50px);margin:10px 0 12px}
+.sec-cab p{font-size:18px;color:var(--ameixa2)}
+
+.servs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.serv{border:1px solid var(--rosa2);border-radius:24px;padding:30px;background:#fff;transition:border-color .15s}
+.serv:hover{border-color:var(--cobre2)}
+.serv .ico{width:52px;height:52px;border-radius:50%;background:var(--rosa);display:grid;place-items:center;margin-bottom:20px}
+.serv .ico svg{width:26px;height:26px}
+.serv h3{font-size:26px;margin-bottom:6px}
+.serv p{color:var(--ameixa2);font-size:15.5px;margin-bottom:18px}
+.serv ul{list-style:none;border-top:1px solid var(--rosa2)}
+.serv li{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--rosa2);font-size:15.5px}
+.serv li b{font-weight:500;white-space:nowrap;color:var(--cobre)}
+
+.agenda{background:var(--ameixa);color:var(--branco)}
+.agenda .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.agenda h2{font-size:clamp(34px,4.6vw,50px);margin-bottom:16px}
+.agenda h2 em{color:var(--cobre2)}
+.agenda p{color:#E4D3DE;font-size:18px}
+.passos{list-style:none;display:grid;gap:16px;counter-reset:p}
+.passos li{counter-increment:p;display:flex;gap:18px;align-items:flex-start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:20px 22px}
+.passos li::before{content:counter(p);flex:none;width:40px;height:40px;border-radius:50%;background:var(--cobre2);color:var(--ameixa);display:grid;place-items:center;font-family:Playfair,Georgia,serif;font-size:20px}
+.passos b{display:block;font-weight:500;font-size:17px}
+.passos span{color:#D5C3CF;font-size:15px}
+.agenda .btn-p{background:var(--cobre2);color:var(--ameixa);margin-top:28px}
+.agenda .btn-p:hover{background:#D9A293}
+
+.equipe{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pessoa{text-align:center}
+.pessoa .foto{aspect-ratio:1/1;border-radius:50%;background:var(--rosa);margin:0 auto 16px;max-width:200px;display:grid;place-items:center;overflow:hidden}
+.pessoa h3{font-size:22px}
+.pessoa p{color:var(--ameixa2);font-size:15px}
+
+.contato{background:var(--rosa)}
+.contato .wrap{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.card{background:var(--branco);border-radius:24px;padding:32px}
+.card h3{font-size:28px;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:16px}
+td{padding:11px 0;border-bottom:1px solid var(--rosa2)}
+td:last-child{text-align:right;font-weight:500}
+.linha{display:flex;gap:12px;align-items:flex-start;padding:10px 0;font-size:16px}
+.linha svg{width:22px;height:22px;flex:none;color:var(--cobre);margin-top:2px}
+
+footer{padding:36px 0 100px;font-size:14px;color:var(--ameixa2)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{font-weight:500;text-decoration:underline;text-underline-offset:3px}
+
+.zap{position:fixed;right:18px;bottom:18px;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:20}
+.zap svg{width:30px;height:30px}
+
+@media (max-width:980px){nav{display:none}.servs,.equipe{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){
+  .hero .wrap,.agenda .wrap,.contato .wrap{grid-template-columns:1fr}
+  .hero .wrap{min-height:0;padding-top:44px;gap:24px}
+  .retrato{min-height:360px}
+  section{padding:64px 0}
+  .card{padding:24px}
+}
+@media (max-width:540px){
+  .servs,.equipe{grid-template-columns:1fr}
+  .topo .btn span{display:none}.topo .btn{padding:0 14px}
+  .acoes .btn{width:100%}
+  .marca{font-size:22px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wv">// SITE DE EXEMPLO feito pela Webverse · <a href="https://usewebverse.com.br">Quero um assim →</a></div>
+
+<header>
+  <div class="wrap topo">
+    <a class="marca" href="#">Studio <em>Bela</em></a>
+    <nav aria-label="Principal"><ul>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#agendar">Agendar</a></li>
+      <li><a href="#equipe">Equipe</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul></nav>
+    <a class="btn btn-p" href="https://wa.me/5577998371379?text=Oi!%20Vi%20o%20site%20de%20exemplo%20do%20sal%C3%A3o%20de%20beleza%20e%20quero%20um%20assim%20pro%20meu%20neg%C3%B3cio%20%F0%9F%AA%90" target="_blank" rel="noopener noreferrer" aria-label="Agendar pelo WhatsApp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Agendar horário</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding:0">
+    <div class="wrap">
+      <div>
+        <small>Cabelo · Unhas · Sobrancelha</small>
+        <h1>Seu momento de <em>cuidar</em> de você.</h1>
+        <p>Atendimento com hora marcada, sem espera e com produtos profissionais. Chega, relaxa e sai se sentindo linda.</p>
+        <div class="acoes">
+          <a class="btn btn-p" href="https://wa.me/5577998371379?text=Oi!%20Vi%20o%20site%20de%20exemplo%20do%20sal%C3%A3o%20de%20beleza%20e%20quero%20um%20assim%20pro%20meu%20neg%C3%B3cio%20%F0%9F%AA%90" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Agendar pelo WhatsApp
+          </a>
+          <a class="btn btn-s" href="#servicos">Ver serviços e preços</a>
+        </div>
+        <div class="nota"><b>+ de 10</b>anos cuidando da autoestima do bairro</div>
+      </div>
+      <div class="retrato">
+        <div class="arco">
+          <svg viewBox="0 0 400 500" width="400" height="500" role="img" aria-label="Ilustração de uma mulher de perfil com cabelo solto" style="position:absolute;inset:0;width:100%;height:100%">
+            <path d="M120 500c0-90 36-140 84-160h20c56 20 96 70 96 160z" fill="#2E1A2B"/>
+            <path d="M188 300h44v48c0 12-44 12-44 0z" fill="#E8B9A4"/>
+            <path d="M140 140c0-70 50-110 110-104 64 6 96 60 90 130-4 50 10 90 30 130-40 14-86 6-110-18z" fill="#5A3A55"/>
+            <ellipse cx="220" cy="200" rx="62" ry="80" fill="#F0C6B2"/>
+            <path d="M150 170c6-62 52-100 108-94 50 6 80 44 82 92-40-6-96-30-120-62-14 32-40 54-70 64z" fill="#5A3A55"/>
+            <path d="M246 206c8 4 16 4 22 0" stroke="#2E1A2B" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <path d="M232 250c10 6 22 6 30 0" stroke="#B06A55" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <circle cx="164" cy="222" r="8" fill="#FFFBF9"/>
+          </svg>
+        </div>
+        <div class="selo"><b>Hoje</b>horários às 14h e 16h30</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <div class="wrap">
+      <div class="sec-cab">
+        <small>Serviços</small>
+        <h2>Do corte à <em>unha</em>, tudo num lugar só</h2>
+        <p>Preços a partir de. O valor final depende do comprimento e do tipo de cabelo.</p>
+      </div>
+      <div class="servs">
+        <div class="serv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#2E1A2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg></div>
+          <h3>Cabelo</h3>
+          <p>Corte, escova, coloração e tratamentos.</p>
+          <ul>
+            <li>Corte feminino<b>R$ 70</b></li>
+            <li>Escova<b>R$ 50</b></li>
+            <li>Coloração<b>R$ 150</b></li>
+            <li>Hidratação<b>R$ 80</b></li>
+          </ul>
+        </div>
+        <div class="serv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#2E1A2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6v6a3 3 0 0 1-6 0z"/><path d="M12 12v9M9 21h6"/></svg></div>
+          <h3>Unhas</h3>
+          <p>Manicure, pedicure e alongamento.</p>
+          <ul>
+            <li>Mão<b>R$ 30</b></li>
+            <li>Pé<b>R$ 35</b></li>
+            <li>Mão + pé<b>R$ 60</b></li>
+            <li>Alongamento em gel<b>R$ 150</b></li>
+          </ul>
+        </div>
+        <div class="serv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#2E1A2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Rosto</h3>
+          <p>Sobrancelha, cílios e maquiagem.</p>
+          <ul>
+            <li>Design de sobrancelha<b>R$ 40</b></li>
+            <li>Henna<b>R$ 50</b></li>
+            <li>Lash lifting<b>R$ 120</b></li>
+            <li>Maquiagem<b>R$ 130</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="agenda" id="agendar">
+    <div class="wrap">
+      <div>
+        <h2>Agendar é <em>simples</em> assim</h2>
+        <p>Sem ligação, sem espera. Você escolhe o horário direto pelo WhatsApp e recebe a confirmação na hora.</p>
+        <a class="btn btn-p" href="https://wa.me/5577998371379?text=Oi!%20Vi%20o%20site%20de%20exemplo%20do%20sal%C3%A3o%20de%20beleza%20e%20quero%20um%20assim%20pro%20meu%20neg%C3%B3cio%20%F0%9F%AA%90" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Escolher meu horário
+        </a>
+      </div>
+      <ol class="passos">
+        <li><div><b>Chama no WhatsApp</b><span>Diz o serviço que você quer.</span></div></li>
+        <li><div><b>Escolhe o horário</b><span>A gente manda os horários livres da semana.</span></div></li>
+        <li><div><b>Recebe o lembrete</b><span>Um dia antes, pra você não esquecer.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="equipe">
+    <div class="wrap">
+      <div class="sec-cab">
+        <small>Equipe</small>
+        <h2>Mãos que <em>entendem</em> do assunto</h2>
+      </div>
+      <div class="equipe">
+        <div class="pessoa">
+          <div class="foto"><svg viewBox="0 0 200 200" width="200" height="200" aria-hidden="true"><circle cx="100" cy="86" r="38" fill="#E8B9A4"/><path d="M58 90c-4-44 20-66 44-66s46 20 42 66c-10-20-28-30-42-30s-34 10-44 30z" fill="#2E1A2B"/><path d="M30 200c6-50 36-72 70-72s64 22 70 72z" fill="#B06A55"/></svg></div>
+          <h3>Carla</h3><p>Cabeleireira · colorista</p>
+        </div>
+        <div class="pessoa">
+          <div class="foto"><svg viewBox="0 0 200 200" width="200" height="200" aria-hidden="true"><circle cx="100" cy="86" r="38" fill="#C98B6E"/><path d="M60 100c-8-50 14-78 40-78s50 26 40 78c0-30-18-50-40-50s-40 20-40 50z" fill="#5A3A55"/><path d="M30 200c6-50 36-72 70-72s64 22 70 72z" fill="#2E1A2B"/></svg></div>
+          <h3>Juliana</h3><p>Manicure · nail designer</p>
+        </div>
+        <div class="pessoa">
+          <div class="foto"><svg viewBox="0 0 200 200" width="200" height="200" aria-hidden="true"><circle cx="100" cy="86" r="38" fill="#F0C6B2"/><path d="M62 80c0-36 18-54 38-54s38 18 38 54c-8-12-22-18-38-18s-30 6-38 18z" fill="#B06A55"/><circle cx="100" cy="36" r="16" fill="#B06A55"/><path d="M30 200c6-50 36-72 70-72s64 22 70 72z" fill="#C98B7A"/></svg></div>
+          <h3>Renata</h3><p>Designer de sobrancelha</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contato" id="contato">
+    <div class="wrap">
+      <div class="card">
+        <h3>Horários</h3>
+        <table>
+          <tr><td>Terça a sexta</td><td>9h às 19h</td></tr>
+          <tr><td>Sábado</td><td>8h às 17h</td></tr>
+          <tr><td>Domingo e segunda</td><td>Fechado</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Onde estamos</h3>
+        <p class="linha"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Principal, 450, sala 2 · Centro<br>Endereço fictício</p>
+        <p class="linha"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Agendamentos só pelo WhatsApp</p>
+        <p class="linha"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>@studiobela (perfil fictício)</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Studio Bela · negócio fictício</span>
+    <span>Site de exemplo feito pela <a href="https://usewebverse.com.br">Webverse</a></span>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/5577998371379?text=Oi!%20Vi%20o%20site%20de%20exemplo%20do%20sal%C3%A3o%20de%20beleza%20e%20quero%20um%20assim%20pro%20meu%20neg%C3%B3cio%20%F0%9F%AA%90" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+</a>
+
+</body>
+</html>

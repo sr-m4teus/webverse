@@ -64,6 +64,7 @@ export const portfolioTextos = {
   titulo: [{ destaque: "Planetas" }, " que a gente já colocou em órbita"] as Trecho[],
   seloExemplo: "EXEMPLO",
   verSite: "Ver site",
+  verExemplo: "Ver exemplo",
   emBreve: "Em breve",
 };
 

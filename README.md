@@ -28,6 +28,7 @@ Abra http://localhost:3000.
 | `npx serve out` | Serve a pasta `out/` para testar o build final |
 | `npm run lint` | Verifica o código |
 | `npm run imagens` | Regenera favicon, ícones e imagem de compartilhamento (só se a marca mudar) |
+| `npm run exemplos` | Tira os prints dos sites de exemplo para o portfólio |
 
 ---
 
@@ -81,9 +82,25 @@ Preencha `whatsapp` só com números: DDI + DDD + número (ex.: `5531999998888`)
    },
    ```
 
-3. Quando entrarem clientes reais, apague os itens com `exemplo: true` e os arquivos `public/portfolio/exemplo-*.svg`.
+3. Quando entrarem clientes reais, apague os itens com `exemplo: true` (e, se quiser, os sites de exemplo, veja abaixo).
 
 Sem `url` (`url: null`), o cartão mostra "Em breve" em vez do botão "Ver site".
+
+### Sites de exemplo (mocks)
+
+Os três itens de exemplo do portfólio apontam para sites mock de verdade, publicados no próprio domínio:
+
+| Exemplo | Endereço | Arquivo |
+|---|---|---|
+| Padaria do Bairro | `/exemplos/padaria` | `public/exemplos/padaria/index.html` |
+| Studio Bela | `/exemplos/salao` | `public/exemplos/salao/index.html` |
+| Oficina Motor Forte | `/exemplos/oficina` | `public/exemplos/oficina/index.html` |
+
+- São HTML puro com CSS embutido, cada um com a identidade do negócio fictício. As fontes ficam em `public/exemplos/_fontes/` (sem requisição externa).
+- Todos têm `noindex` (não aparecem no Google) e uma faixa no topo avisando que é um exemplo da Webverse.
+- Os botões de WhatsApp dos mocks levam para o **WhatsApp da Webverse** com a mensagem "Vi o site de exemplo da … e quero um assim". **Se o número mudar**, troque `5577998371379` nos três arquivos, além do `src/config/site.ts`.
+- Depois de editar um mock, rode `npm run exemplos` para gerar de novo os prints do portfólio (`public/portfolio/exemplo-*.webp`). O script usa o Google Chrome instalado no computador.
+- Para criar um exemplo novo: crie `public/exemplos/<nome>/index.html`, rode `npm run exemplos` e adicione o item em `src/content/portfolio.ts` com `url: "/exemplos/<nome>"` e `exemplo: true`.
 
 ### Adicionar um depoimento
 

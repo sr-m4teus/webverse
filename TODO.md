@@ -3,7 +3,7 @@
 ## Quando tiver
 
 - [ ] **Preço**: `src/content/planos.ts` → `preco: null`. Enquanto for `null`, aparece "Orçamento pelo WhatsApp". Revise também o `nome`, a `descricao` e a lista `inclui` do plano.
-- [ ] **Portfólio real**: `src/content/portfolio.ts`. Trocar os 3 itens `exemplo: true` (Padaria do Bairro, Studio Bela, Oficina Motor Forte, nomes fictícios) por clientes reais e apagar `public/portfolio/exemplo-*.svg`.
+- [ ] **Portfólio real**: `src/content/portfolio.ts`. Os 3 itens `exemplo: true` apontam para sites mock em `public/exemplos/` (Padaria do Bairro, Studio Bela, Oficina Motor Forte, nomes fictícios). Quando entrar cliente real, adicione o item e decida se mantém os exemplos.
 - [ ] **Depoimentos**: `src/content/depoimentos.ts`. A seção fica oculta até ter pelo menos 1 depoimento real.
 - [ ] **Analytics** (opcional): `src/config/site.ts` → `analytics`.
 

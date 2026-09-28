@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oficina Motor Forte | Site de exemplo · Webverse</title>
+<meta name="description" content="Site de exemplo criado pela Webverse para uma oficina mecânica.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#15171A">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="preload" href="/exemplos/_fontes/oswald-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:Oswald;font-weight:600;font-display:swap;src:url(/exemplos/_fontes/oswald-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Barlow;font-weight:400;font-display:swap;src:url(/exemplos/_fontes/barlow-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Barlow;font-weight:600;font-display:swap;src:url(/exemplos/_fontes/barlow-latin-600-normal.woff2) format("woff2")}
+:root{--preto:#15171A;--grafite:#1F2226;--cinza:#2C3036;--linha:#3A3F46;--texto:#F2F2F0;--suave:#B4B8BE;--amarelo:#FFC400;--amarelo2:#FFD54D}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{font-family:Barlow,system-ui,sans-serif;background:var(--preto);color:var(--texto);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--amarelo);outline-offset:2px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Oswald,Impact,"Arial Narrow",sans-serif;font-weight:600;text-transform:uppercase;line-height:1.02;letter-spacing:.005em}
+.amarelo{color:var(--amarelo)}
+
+.wv{background:#0B0D14;color:#F4F3EE;font:600 13px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;text-align:center;padding:9px 16px;border-bottom:1px solid #2A3042}
+.wv a{color:#CCFF3D;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.wv a:hover{text-decoration-thickness:2px}
+
+header{position:sticky;top:0;z-index:10;background:rgba(21,23,26,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--linha)}
+.topo{display:flex;align-items:center;justify-content:space-between;gap:16px;height:70px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:Oswald,Impact,sans-serif;font-size:22px;text-transform:uppercase;letter-spacing:.02em}
+.marca svg{width:38px;height:38px}
+nav ul{display:flex;gap:28px;list-style:none;font-weight:600;font-size:15px;text-transform:uppercase;letter-spacing:.06em}
+nav a{text-decoration:none;color:var(--suave)}
+nav a:hover{color:var(--texto)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 26px;border-radius:6px;font-weight:600;text-decoration:none;font-size:16px;text-transform:uppercase;letter-spacing:.05em;transition:background .15s}
+.btn-p{background:var(--amarelo);color:var(--preto)}
+.btn-p:hover{background:var(--amarelo2)}
+.btn-s{border:2px solid var(--linha);color:var(--texto)}
+.btn-s:hover{border-color:var(--amarelo)}
+.btn svg{width:20px;height:20px}
+.topo .btn{min-height:44px;padding:0 18px;font-size:14px}
+
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--linha)}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0 22px,rgba(255,255,255,.025) 22px 44px)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:64px;padding-bottom:72px}
+.chip{display:inline-flex;align-items:center;gap:8px;background:var(--grafite);border:1px solid var(--linha);border-radius:6px;padding:6px 12px;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--amarelo)}
+.hero h1{font-size:clamp(46px,7vw,86px);margin:18px 0 18px}
+.hero p{font-size:19px;color:var(--suave);max-width:30em}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.nums{display:flex;flex-wrap:wrap;gap:36px;margin-top:40px}
+.nums b{display:block;font-family:Oswald,Impact,sans-serif;font-size:38px;color:var(--amarelo);line-height:1}
+.nums span{font-size:14px;color:var(--suave);text-transform:uppercase;letter-spacing:.06em}
+.arte{background:var(--grafite);border:1px solid var(--linha);border-radius:14px;aspect-ratio:1/1;display:grid;place-items:center;position:relative}
+.arte .aviso{position:absolute;right:16px;top:16px;background:var(--amarelo);color:var(--preto);font-family:Oswald,Impact,sans-serif;text-transform:uppercase;padding:8px 14px;border-radius:4px;font-size:16px;transform:rotate(3deg)}
+
+.faixa{background:var(--amarelo);color:var(--preto)}
+.faixa ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:22px 0}
+.faixa li{display:flex;align-items:center;gap:12px;font-weight:600;font-size:17px}
+.faixa svg{width:28px;height:28px;flex:none}
+
+section{padding:88px 0}
+.sec-cab{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:40px}
+.sec-cab small{display:block;font-weight:600;text-transform:uppercase;letter-spacing:.16em;font-size:14px;color:var(--amarelo)}
+.sec-cab h2{font-size:clamp(36px,5vw,56px);margin-top:8px}
+.sec-cab p{max-width:26em;color:var(--suave);font-size:17px}
+
+.servs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.serv{background:var(--grafite);border:1px solid var(--linha);border-radius:12px;padding:26px;display:flex;flex-direction:column;gap:10px;transition:border-color .15s}
+.serv:hover{border-color:var(--amarelo)}
+.serv .ico{width:50px;height:50px;border-radius:10px;background:var(--cinza);display:grid;place-items:center;color:var(--amarelo)}
+.serv .ico svg{width:26px;height:26px}
+.serv h3{font-size:24px;margin-top:6px}
+.serv p{color:var(--suave);font-size:16px;flex:1}
+.serv b{font-family:Oswald,Impact,sans-serif;font-size:18px;text-transform:uppercase;color:var(--amarelo);letter-spacing:.02em}
+
+.orc{background:var(--grafite);border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+.orc .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.orc h2{font-size:clamp(36px,5vw,56px);margin-bottom:16px}
+.orc p{color:var(--suave);font-size:18px;margin-bottom:28px}
+.passos{list-style:none;display:grid;gap:14px;counter-reset:p}
+.passos li{counter-increment:p;display:flex;gap:16px;align-items:center;background:var(--preto);border:1px solid var(--linha);border-radius:10px;padding:18px 20px;font-size:17px}
+.passos li::before{content:"0" counter(p);font-family:Oswald,Impact,sans-serif;font-size:28px;color:var(--amarelo);flex:none;width:44px}
+
+.info .wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--grafite);border:1px solid var(--linha);border-radius:12px;padding:30px}
+.card h3{font-size:30px;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:17px}
+td{padding:12px 0;border-bottom:1px solid var(--linha)}
+td:last-child{text-align:right;font-weight:600}
+.end{display:flex;gap:10px;font-size:17px}
+.end svg{width:22px;height:22px;flex:none;color:var(--amarelo);margin-top:2px}
+.mapa{margin-top:18px;border-radius:10px;overflow:hidden;border:1px solid var(--linha)}
+
+footer{padding:36px 0 100px;font-size:14px;color:var(--suave);border-top:1px solid var(--linha)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{font-weight:600;color:var(--texto);text-decoration:underline;text-underline-offset:3px}
+
+.zap{position:fixed;right:18px;bottom:18px;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.35);z-index:20}
+.zap svg{width:30px;height:30px}
+
+@media (max-width:980px){nav{display:none}.servs{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){
+  .hero .wrap,.orc .wrap,.info .wrap{grid-template-columns:1fr}
+  .hero .wrap{padding-top:40px;padding-bottom:56px}
+  .arte{max-width:420px;width:100%;margin:0 auto}
+  .faixa ul{grid-template-columns:1fr;gap:12px}
+  section{padding:64px 0}
+  .card{padding:24px}
+}
+@media (max-width:540px){
+  .servs{grid-template-columns:1fr}
+  .topo .btn span{display:none}.topo .btn{padding:0 14px}
+  .acoes .btn{width:100%}
+  .marca{font-size:19px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wv">// SITE DE EXEMPLO feito pela Webverse · <a href="https://usewebverse.com.br">Quero um assim →</a></div>
+
+<header>
+  <div class="wrap topo">
+    <a class="marca" href="#">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="8" fill="#FFC400"/><circle cx="20" cy="20" r="10" fill="none" stroke="#15171A" stroke-width="4"/><path d="M20 6v5M20 29v5M6 20h5M29 20h5M10 10l3.5 3.5M26.5 26.5 30 30M30 10l-3.5 3.5M13.5 26.5 10 30" stroke="#15171A" stroke-width="4" stroke-linecap="round"/><circle cx="20" cy="20" r="3" fill="#15171A"/></svg>
+      Motor Forte
+    </a>
+    <nav aria-label="Principal"><ul>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#orcamento">Orçamento</a></li>
+      <li><a href="#onde">Onde fica</a></li>
+    </ul></nav>
+    <a class="btn btn-p" href="https://wa.me/5577998371379?text=Oi!%20Vi%20o%20site%20de%20exemplo%20da%20oficina%20e%20quero%20um%20assim%20pro%20meu%20neg%C3%B3cio%20%F0%9F%AA%90" target="_blank" rel="noopener noreferrer" aria-label="Pedir orçamento pelo WhatsApp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><span>Pedir orçamento</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding:0">
+    <div class="wrap">
+      <div>
+        <span class="chip">Mecânica em geral · desde 2005</span>
+        <h1>Seu carro em <span class="amarelo">boas mãos.</span></h1>
+        <p>Diagnóstico honesto, orçamento antes de mexer em qualquer coisa e serviço com garantia. Sem enrolação.</p>
+        <div class="acoes">
+          <a class="btn btn-p" href="https://wa.me/5577998371379?text=Oi!%20Vi%20o%20site%20de%20exemplo%20da%20oficina%20e%20quero%20um%20assim%20pro%20meu%20neg%C3%B3cio%20%F0%9F%AA%90" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Orçamento pelo WhatsApp
+          </a>
+          <a class="btn btn-s" href="#servicos">Ver serviços</a>
+        </div>
+        <div class="nums">
+          <div><b>20 anos</b><span>de oficina</span></div>
+          <div><b>90 dias</b><span>de garantia</span></div>
+          <div><b>Seg a sáb</b><span>sem agendar</span></div>
+        </div>
+      </div>
+      <div class="arte">
+        <svg viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Ilustração de um carro com uma chave inglesa">
+          <circle cx="200" cy="200" r="150" fill="#2C3036"/>
+          <path d="M70 250h260v-30c0-12-8-20-20-22l-40-6-30-40c-6-8-14-12-24-12h-72c-10 0-18 4-24 12l-26 38-10 2c-8 2-14 10-14 18z" fill="#FFC400"/>
+          <path d="M140 150h50v40h-78zM206 150h40c6 0 10 2 14 6l26 34h-80z" fill="#15171A" opacity=".85"/>
+          <rect x="70" y="232" width="260" height="10" fill="#15171A" opacity=".2"/>
+          <circle cx="126" cy="256" r="30" fill="#15171A"/><circle cx="126" cy="256" r="12" fill="#B4B8BE"/>
+          <circle cx="284" cy="256" r="30" fill="#15171A"/><circle cx="284" cy="256" r="12" fill="#B4B8BE"/>
+          <rect x="310" y="214" width="16" height="10" rx="3" fill="#F2F2F0"/>
+          <g transform="rotate(-35 300 110)"><rect x="286" y="60" width="28" height="110" rx="10" fill="#F2F2F0"/><path d="M280 60a20 20 0 1 1 40 0l-8 10h-24z" fill="#F2F2F0"/><rect x="294" y="36" width="12" height="28" fill="#2C3036"/></g>
+        </svg>
+        <span class="aviso">Orçamento grátis</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="faixa">
+    <ul class="wrap">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Garantia de 90 dias no serviço</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>Orçamento antes de começar</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Pix, débito e até 6x no cartão</li>
+    </ul>
+  </div>
+
+  <section id="servicos">
+    <div class="wrap">
+      <div class="sec-cab">
+        <div><small>Serviços</small><h2>O que a gente <span class="amarelo">resolve</span></h2></div>
+        <p>Carros nacionais e importados. Preços a partir de, confirmados no orçamento.</p>
+      </div>
+      <div class="servs">
+        <div class="serv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/></svg></div>
+          <h3>Revisão completa</h3><p>Checagem de 40 itens, fluidos, filtros e relatório no WhatsApp.</p><b>A partir de R$ 180</b>
+        </div>
+        <div class="serv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v6M8 4l4 4 4-4"/><path d="M6 12h12l-1 9H7z"/></svg></div>
+          <h3>Troca de óleo</h3><p>Óleo e filtro na especificação do fabricante, em 30 minutos.</p><b>A partir de R$ 150</b>
+        </div>
+        <div class="serv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div>
+          <h3>Freios</h3><p>Pastilhas, discos e fluido. Barulho no freio não dá pra deixar pra depois.</p><b>A partir de R$ 220</b>
+        </div>
+        <div class="serv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16M7 20V10l5-6 5 6v10"/><path d="M10 14h4"/></svg></div>
+          <h3>Suspensão</h3><p>Amortecedores, bandejas e alinhamento para o carro parar de bater.</p><b>A partir de R$ 250</b>
+        </div>
+        <div class="serv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></div>
+          <h3>Elétrica e bateria</h3><p>Diagnóstico por scanner, bateria, alternador e motor de partida.</p><b>A partir de R$ 90</b>
+        </div>
+        <div class="serv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.9 7l14.2 10M4.9 17 19.1 7"/></svg></div>
+          <h3>Ar-condicionado</h3><p>Higienização, carga de gás e troca de filtro de cabine.</p><b>A partir de R$ 160</b>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="orc" id="orcamento">
+    <div class="wrap">
+      <div>
+        <h2>Orçamento sem <span class="amarelo">sair de casa</span></h2>
+        <p>Manda pelo WhatsApp o modelo do carro e o que está acontecendo. Se der, grava um vídeo do barulho. A gente responde com uma estimativa e um horário.</p>
+        <a class="btn btn-p" href="https://wa.me/5577998371379?text=Oi!%20Vi%20o%20site%20de%20exemplo%20da%20oficina%20e%20quero%20um%20assim%20pro%20meu%20neg%C3%B3cio%20%F0%9F%AA%90" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Mandar pelo WhatsApp
+        </a>
+      </div>
+      <ol class="passos">
+        <li>Modelo, ano e placa do carro</li>
+        <li>O que está acontecendo (foto ou vídeo ajuda)</li>
+        <li>Receba a estimativa e escolha o horário</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="info" id="onde">
+    <div class="wrap">
+      <div class="card">
+        <h3>Horários</h3>
+        <table>
+          <tr><td>Segunda a sexta</td><td>7h30 às 18h</td></tr>
+          <tr><td>Sábado</td><td>8h às 12h</td></tr>
+          <tr><td>Domingo</td><td>Fechado</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Onde fica</h3>
+        <p class="end"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Rua dos Mecânicos, 800 · Distrito Industrial<br>Endereço fictício</p>
+        <div class="mapa">
+          <svg viewBox="0 0 480 190" width="480" height="190" role="img" aria-label="Mapa ilustrativo da localização">
+            <rect width="480" height="190" fill="#2C3036"/>
+            <path d="M0 60h480M0 140h480M90 0v190M260 0v190M390 0v190" stroke="#1F2226" stroke-width="16"/>
+            <path d="M0 100 C140 80 300 130 480 96" stroke="#3A3F46" stroke-width="20" fill="none"/>
+            <rect x="110" y="72" width="130" height="50" rx="4" fill="#3A3F46"/><rect x="280" y="8" width="90" height="40" rx="4" fill="#3A3F46"/><rect x="12" y="150" width="60" height="32" rx="4" fill="#3A3F46"/>
+            <circle cx="175" cy="42" r="17" fill="#FFC400"/><circle cx="175" cy="42" r="6" fill="#15171A"/><path d="M175 59l-8 11h16z" fill="#FFC400"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Oficina Motor Forte · negócio fictício</span>
+    <span>Site de exemplo feito pela <a href="https://usewebverse.com.br">Webverse</a></span>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/5577998371379?text=Oi!%20Vi%20o%20site%20de%20exemplo%20da%20oficina%20e%20quero%20um%20assim%20pro%20meu%20neg%C3%B3cio%20%F0%9F%AA%90" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+</a>
+
+</body>
+</html>

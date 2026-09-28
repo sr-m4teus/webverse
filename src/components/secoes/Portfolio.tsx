@@ -5,8 +5,10 @@ import { portfolioTextos } from "@/content/textos";
 import { Secao } from "@/components/ui/Secao";
 import { Selo } from "@/components/ui/Selo";
 
+// Endereço mostrado na barra do navegador do cartão. Para links internos
+// (sites de exemplo em /exemplos), inventa um domínio a partir do nome.
 function dominioDe(url: string | null, nome: string) {
-  if (url) return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  if (url && !url.startsWith("/")) return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
   return `${nome.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "")}.com.br`;
 }
 
@@ -52,7 +54,7 @@ export function Portfolio() {
                   rel="noopener noreferrer"
                   className="inline-flex min-h-10 shrink-0 items-center gap-1 rounded-full border-2 border-linha px-4 text-sm font-bold transition-colors hover:border-orbita hover:text-orbita"
                 >
-                  {portfolioTextos.verSite}
+                  {item.exemplo ? portfolioTextos.verExemplo : portfolioTextos.verSite}
                   <span className="sr-only"> de {item.nome} (abre em nova aba)</span>
                   <ArrowUpRight className="size-4" aria-hidden="true" />
                 </a>

@@ -1,0 +1,3 @@
+Fontes usadas nos sites de exemplo (/exemplos), hospedadas localmente.
+Todas sob a SIL Open Font License 1.1, obtidas via Fontsource (https://fontsource.org):
+Fraunces, Nunito, Playfair Display, Jost, Oswald, Barlow.
