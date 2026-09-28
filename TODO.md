@@ -14,5 +14,5 @@
 ## Verificar depois do deploy
 
 - [ ] Testar o botão do WhatsApp num celular com o app instalado e ver se o 🪐 da mensagem chega certo. Na página web de fallback do WhatsApp (sem o app), emojis mais novos aparecem como `�`, e isso é um problema da página deles. Se o 🪐 falhar também no app, troque por 🚀 ou tire o emoji de `mensagemWhatsapp`.
-- [ ] Apontar DNS no Registro.br (passo a passo no README).
+- [ ] Apontar DNS na Hostinger (passo a passo no README).
 - [ ] Enviar o sitemap no Google Search Console.

@@ -143,19 +143,26 @@ A cada `git push` na branch `main`, a Vercel publica de novo automaticamente.
 
    Em projetos novos a Vercel às vezes mostra outros valores (ex.: um IP diferente ou um CNAME tipo `xxxx.vercel-dns-017.com`). Nesse caso, use os que ela mostrar.
 
-### 3. Apontar o domínio no Registro.br
+### 3. Apontar o domínio na Hostinger
 
-1. Entre em https://registro.br com sua conta e clique no domínio `usewebverse.com.br`.
-2. Na seção **DNS**, confira se está usando os **servidores DNS do Registro.br**. Se não estiver, clique em **Alterar servidores DNS → Utilizar os DNS do Registro.br**.
-3. Clique em **Configurar zona DNS** (ou **Editar zona**). Se aparecer, ative o **modo avançado**.
-4. Crie os registros:
-   - **Domínio raiz:** tipo `A`, nome em branco (só `usewebverse.com.br`), valor `76.76.21.21` (ou o IP que a Vercel mostrou).
-   - **www:** tipo `CNAME`, nome `www`, valor `cname.vercel-dns.com` (ou o que a Vercel mostrou).
-5. Apague registros `A`/`AAAA`/`CNAME` antigos para `@` ou `www` que apontem para outro lugar (ex.: página de "domínio estacionado").
-6. Salve. A propagação costuma levar de alguns minutos a algumas horas (no Registro.br, às vezes até 24 h).
+O domínio foi registrado pela Hostinger, então o DNS é editado no painel dela (hPanel).
+
+1. Entre em https://hpanel.hostinger.com → **Domínios** → clique em `usewebverse.com.br`.
+2. No menu lateral, abra **DNS / Nameservers**.
+3. Na aba **Nameservers**, confira se está usando os **nameservers da Hostinger** (algo como `ns1.dns-parking.com` e `ns2.dns-parking.com`). Se não estiver, selecione **Usar nameservers da Hostinger**. Sem isso, os registros abaixo não valem.
+4. Na aba **Registros DNS**, apague os registros padrão que apontam para a Hostinger:
+   - `A` com nome `@` (IP da página de "domínio estacionado");
+   - `AAAA` com nome `@`, se existir;
+   - `CNAME` com nome `www` (normalmente aponta para `usewebverse.com.br`).
+5. Adicione os registros da Vercel:
+   - **Domínio raiz:** tipo `A`, nome `@`, aponta para `76.76.21.21` (ou o IP que a Vercel mostrou), TTL padrão.
+   - **www:** tipo `CNAME`, nome `www`, aponta para `cname.vercel-dns.com` (ou o que a Vercel mostrou), TTL padrão.
+6. Salve. A propagação costuma levar de alguns minutos a algumas horas (em casos raros, até 24 h).
 7. Volte em **Settings → Domains** na Vercel. Quando os dois domínios ficarem com ✓ **Valid Configuration**, a Vercel emite o certificado HTTPS automaticamente.
 
-**Alternativa:** delegar o DNS inteiro para a Vercel. No Registro.br, em **Alterar servidores DNS**, informe `ns1.vercel-dns.com` e `ns2.vercel-dns.com`. Aí a Vercel gerencia tudo, mas registros de e-mail (MX) passam a ser criados na Vercel também.
+**Alternativa:** delegar o DNS inteiro para a Vercel. Na Hostinger, em **DNS / Nameservers → Nameservers → Alterar nameservers**, informe `ns1.vercel-dns.com` e `ns2.vercel-dns.com`. Aí a Vercel gerencia tudo, mas registros de e-mail (MX) passam a ser criados na Vercel também.
+
+> **Domínio `.com.br`:** a Hostinger faz o registro junto ao Registro.br por você. Se o domínio aparecer como pendente, confira o e-mail da Hostinger: o `.com.br` exige CPF/CNPJ válido e pode pedir confirmação antes de ativar.
 
 > **E-mail:** hoje o site usa `usewebverse@gmail.com`, que não depende do DNS. Se um dia quiser um e-mail no domínio (ex.: `contato@usewebverse.com.br`), crie os registros `MX`/`TXT` que o provedor pedir, na mesma zona DNS.
 
