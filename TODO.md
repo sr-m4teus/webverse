@@ -2,7 +2,6 @@
 
 ## Obrigatório
 
-- [ ] **Número do WhatsApp**: `src/config/site.ts` → `whatsapp: "55XXXXXXXXXXX"`. Só números, com DDI 55 + DDD + número.
 - [ ] **Política de alterações**: `src/content/faq.ts` → resposta de "Posso pedir alterações depois?" (hoje: `[DEFINIR POLÍTICA DE ALTERAÇÕES]`).
 
 ## Quando tiver

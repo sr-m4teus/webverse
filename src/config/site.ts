@@ -3,7 +3,7 @@ export const site = {
   dominio: "https://usewebverse.com.br",
   instagram: "https://instagram.com/usewebverse",
   instagramHandle: "@usewebverse",
-  whatsapp: "55XXXXXXXXXXX", // TODO: preencher com DDI+DDD+número
+  whatsapp: "5577998371379",
   mensagemWhatsapp: "Oi! Vim pelo site e quero colocar meu negócio em órbita 🪐",
   email: "usewebverse@gmail.com",
   prazoDias: 7,
