@@ -25,6 +25,11 @@ export const faq: Pergunta[] = [
       "Pode sim! Cada plano inclui de 1 a 3 rodadas de ajustes antes da entrega. Depois que o site está no ar, a manutenção opcional (R$ 69/mês) cobre até 2 alterações por mês.",
   },
   {
+    pergunta: "Preciso contratar a manutenção?",
+    resposta:
+      "Não, ela é opcional. Sem a manutenção, a hospedagem e as alterações depois da entrega ficam por sua conta. Com ela, por R$ 69/mês, a gente cuida da hospedagem, mantém o domínio em dia e faz até 2 alterações por mês.",
+  },
+  {
     pergunta: "Quanto custa?",
     resposta:
       "Os planos vão de R$ 997 a R$ 2.797, com pagamento único e sem mensalidade obrigatória: 50% no início e 50% na entrega, no Pix. O domínio fica no seu nome e é pago por você. Na dúvida, chama no WhatsApp que a gente te ajuda a escolher.",

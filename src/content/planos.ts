@@ -70,4 +70,5 @@ export const manutencao = {
 export const condicoes = [
   "Pagamento: 50% no início e 50% na entrega, no Pix.",
   "O domínio (.com.br) fica no seu nome e é pago por você.",
+  "Sem a manutenção, a hospedagem fica por sua conta.",
 ];
