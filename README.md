@@ -98,7 +98,7 @@ Os três itens de exemplo do portfólio apontam para sites mock de verdade, publ
 
 - São HTML puro com CSS embutido, cada um com a identidade do negócio fictício. As fontes ficam em `public/exemplos/_fontes/` (sem requisição externa).
 - Todos têm `noindex` (não aparecem no Google) e uma faixa no topo avisando que é um exemplo da Webverse.
-- Os botões de WhatsApp dos mocks levam para o **WhatsApp da Webverse** com a mensagem "Vi o site de exemplo da … e quero um assim". **Se o número mudar**, troque `5577998371379` nos três arquivos, além do `src/config/site.ts`.
+- Os botões de WhatsApp dos mocks levam para o **WhatsApp da Webverse** com a mensagem "Vi o site de exemplo da … e quero um assim". **Se o número mudar**, troque `5577998612496` nos três arquivos, além do `src/config/site.ts`.
 - Depois de editar um mock, rode `npm run exemplos` para gerar de novo os prints do portfólio (`public/portfolio/exemplo-*.webp`). O script usa o Google Chrome instalado no computador.
 - Para criar um exemplo novo: crie `public/exemplos/<nome>/index.html`, rode `npm run exemplos` e adicione o item em `src/content/portfolio.ts` com `url: "/exemplos/<nome>"` e `exemplo: true`.
 
