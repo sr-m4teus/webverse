@@ -1,4 +1,8 @@
+import { faixaDePreco, promocao } from "./planos";
+
 export type Pergunta = { pergunta: string; resposta: string };
+
+const faixa = faixaDePreco();
 
 export const faq: Pergunta[] = [
   {
@@ -32,6 +36,7 @@ export const faq: Pergunta[] = [
   {
     pergunta: "Quanto custa?",
     resposta:
-      "Os planos vão de R$ 997 a R$ 2.797, com pagamento único e sem mensalidade obrigatória: 50% no início e 50% na entrega, no Pix. O domínio fica no seu nome e é pago por você. Na dúvida, chama no WhatsApp que a gente te ajuda a escolher.",
+      (faixa ? `Os planos vão de ${faixa.min} a ${faixa.max}${promocao ? `, já com ${promocao.desconto}% off` : ""}. ` : "") +
+      "Pagamento único e sem mensalidade obrigatória: 50% no início e 50% na entrega, no Pix. O domínio fica no seu nome e é pago por você. Na dúvida, chama no WhatsApp que a gente te ajuda a escolher.",
   },
 ];

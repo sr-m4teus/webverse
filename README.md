@@ -120,7 +120,8 @@ Tudo fica em `src/content/planos.ts`: os planos (nome, preço, prazo, o que incl
 
 - `destaque: "RECOMENDADO"` põe borda e selo no cartão. Apague a linha para tirar.
 - `preco: null` troca o preço por "Orçamento pelo WhatsApp".
-- Se mudar prazos ou preços, revise também as respostas de "Em quanto tempo fica pronto?" e "Quanto custa?" em `src/content/faq.ts` e o `priceRange` em `src/app/layout.tsx`.
+- **Promoção:** `promocao` (no mesmo arquivo) aplica o desconto em todos os planos: mostra o preço antigo riscado, o novo preço, o selo `-30%` e uma faixa acima dos cartões. Muda o percentual em `desconto`. Para encerrar, troque por `promocao = null`. O campo `ate` ("AAAA-MM-DD") só exibe "Válida até…": como o site é estático, **a promoção não sai do ar sozinha**. A resposta "Quanto custa?" do FAQ e o `priceRange` do Google se ajustam automaticamente.
+- Se mudar prazos ou preços, revise também as respostas de "Em quanto tempo fica pronto?" e "Quanto custa?" em `src/content/faq.ts`.
 
 ---
 

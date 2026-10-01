@@ -11,6 +11,24 @@ export type Plano = {
   destaque?: string;
 };
 
+/**
+ * Promoção nos planos (não vale para extras nem manutenção).
+ * - Para desligar: `promocao = null`.
+ * - `ate`: último dia da promoção ("AAAA-MM-DD"), só exibido no site. O site é
+ *   estático: a promoção NÃO sai do ar sozinha, desligue manualmente.
+ */
+export const promocao: { desconto: number; ate: string | null } | null = {
+  desconto: 30,
+  ate: null,
+};
+
+/** Preço com a promoção aplicada (arredondado para baixo). */
+export const precoFinal = (preco: number) =>
+  promocao ? Math.floor(preco * (1 - promocao.desconto / 100)) : preco;
+
+export const brl = (v: number) =>
+  new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 }).format(v);
+
 export const planos: Plano[] = [
   {
     nome: "Órbita Baixa",
@@ -72,3 +90,10 @@ export const condicoes = [
   "O domínio (.com.br) fica no seu nome e é pago por você.",
   "Sem a manutenção, a hospedagem fica por sua conta.",
 ];
+
+/** Menor e maior preço final dos planos, ex.: "R$ 697 a R$ 1.957". */
+export function faixaDePreco() {
+  const precos = planos.flatMap((p) => (p.preco === null ? [] : [precoFinal(p.preco)]));
+  if (precos.length === 0) return null;
+  return { min: brl(Math.min(...precos)), max: brl(Math.max(...precos)) };
+}

@@ -1,19 +1,31 @@
-import { Check, MessageCircle, Plus, Wrench } from "lucide-react";
+import { BadgePercent, Check, MessageCircle, Plus, Wrench } from "lucide-react";
 import { linkWhatsapp, whatsappCom } from "@/config/site";
-import { condicoes, extras, manutencao, planos } from "@/content/planos";
+import { brl, condicoes, extras, manutencao, planos, precoFinal, promocao } from "@/content/planos";
 import { planosTextos as t } from "@/content/textos";
 import { Botao } from "@/components/ui/Botao";
 import { Secao } from "@/components/ui/Secao";
 import { Selo } from "@/components/ui/Selo";
 
-const brl = (v: number) =>
-  new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 }).format(v);
-
 export function Planos() {
   if (planos.length === 0) return null;
   return (
     <Secao id="planos" selo={t.selo} titulo={t.titulo} subtitulo={t.subtitulo}>
-      <ul className="mt-12 grid gap-5 lg:grid-cols-3 lg:gap-6">
+      {promocao && (
+        <div className="mt-10 flex flex-col gap-3 rounded-cartao border border-cometa/60 px-5 py-4 sm:flex-row sm:items-center sm:gap-4">
+          <Selo variante="cometa" className="shrink-0">
+            {t.promocaoSelo}
+          </Selo>
+          <p className="flex items-center gap-2 font-bold">
+            <BadgePercent className="size-5 shrink-0 text-cometa" aria-hidden="true" />
+            {t.promocaoTexto(promocao.desconto)}
+          </p>
+          <p className="text-sm text-texto-suave sm:ml-auto">
+            {promocao.ate && `${t.promocaoAte(promocao.ate)} `}
+            {t.promocaoNota}
+          </p>
+        </div>
+      )}
+      <ul className={`${promocao ? "mt-10" : "mt-12"} grid gap-5 lg:grid-cols-3 lg:gap-6`}>
         {planos.map((p) => (
           <li
             key={p.nome}
@@ -33,10 +45,24 @@ export function Planos() {
               {p.preco === null ? (
                 <p className="font-semibold">{t.semPreco}</p>
               ) : (
-                <p className="flex flex-wrap items-baseline gap-x-2">
-                  <span className="font-titulo text-4xl font-extrabold tracking-[-0.02em] text-orbita">{brl(p.preco)}</span>
-                  <span className="text-sm text-texto-suave">{t.pagamentoUnico}</span>
-                </p>
+                <>
+                  {promocao && (
+                    <p className="mb-1 flex items-center gap-2 text-texto-suave">
+                      <span className="sr-only">{t.de} </span>
+                      <s>{brl(p.preco)}</s>
+                      <Selo variante="cometa" barras={false} className="px-2 py-0.5">
+                        {`-${promocao.desconto}%`}
+                      </Selo>
+                      <span className="sr-only"> {t.por}</span>
+                    </p>
+                  )}
+                  <p className="flex flex-wrap items-baseline gap-x-2">
+                    <span className="font-titulo text-4xl font-extrabold tracking-[-0.02em] text-orbita">
+                      {brl(precoFinal(p.preco))}
+                    </span>
+                    <span className="text-sm text-texto-suave">{t.pagamentoUnico}</span>
+                  </p>
+                </>
               )}
               <p className="mt-3 font-mono text-xs font-bold tracking-[0.08em] text-texto-suave">
                 {"// "}
@@ -54,7 +80,7 @@ export function Planos() {
             </ul>
 
             <Botao
-              href={p.preco === null ? linkWhatsapp : whatsappCom(t.mensagem(p.nome))}
+              href={p.preco === null ? linkWhatsapp : whatsappCom(t.mensagem(p.nome, promocao?.desconto))}
               externo
               variante={p.destaque ? "primario" : "secundario"}
               className="mt-8 w-full"
