@@ -73,24 +73,20 @@ export const depoimentosTextos = {
   titulo: ["Quem já está ", { destaque: "em órbita" }] as Trecho[],
 };
 
-export const planosTextos = {
-  selo: "PLANOS",
-  titulo: ["Quanto custa entrar em ", { destaque: "órbita?" }] as Trecho[],
-  subtitulo: "Pagamento único, sem mensalidade obrigatória. Escolhe o plano e chama no WhatsApp.",
-  semPreco: "Orçamento pelo WhatsApp: resposta rápida e sem compromisso",
-  pagamentoUnico: "pagamento único",
-  prazo: (dias: number) => `NO AR EM ${dias} DIAS`,
-  botao: (plano: string) => `Quero o ${plano}`,
-  mensagem: (plano: string, desconto?: number) =>
-    `Oi! Vim pelo site e quero o plano ${plano}${desconto ? ` com ${desconto}% off` : ""} 🪐`,
-  promocaoSelo: "PROMOÇÃO",
-  promocaoTexto: (desconto: number) => `${desconto}% off em todos os planos`,
-  promocaoAte: (data: string) => `Válida até ${data.split("-").reverse().slice(0, 2).join("/")}.`,
-  promocaoNota: "Desconto aplicado no preço do plano. Não vale para extras e manutenção.",
-  de: "de",
-  por: "por",
-  extrasTitulo: "Extras",
-  extrasSubtitulo: "Adicione a qualquer plano.",
+export const precoTextos = {
+  selo: "PREÇO",
+  titulo: ["Um site que cabe no seu ", { destaque: "bolso" }] as Trecho[],
+  subtitulo: "Sem pacote engessado. A gente monta o site em cima do que seu negócio precisa.",
+  ofertaTitulo: "Oferta sob medida",
+  ofertaTexto:
+    "A gente faz um site com uma oferta que caiba no seu bolso. Conta o que você precisa e recebe um orçamento rápido e sem compromisso.",
+  ofertaItens: [
+    "Preço combinado antes de começar",
+    "Proposta sob medida pro seu negócio",
+    "Resposta rápida pelo WhatsApp",
+  ],
+  ofertaBotao: "Pedir meu orçamento",
+  ofertaMensagem: "Oi! Vim pelo site e quero um orçamento pro meu negócio 🪐",
   manutencaoSubtitulo: "Pra você não se preocupar com nada depois que o site estiver no ar.",
 };
 

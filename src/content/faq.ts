@@ -1,8 +1,4 @@
-import { faixaDePreco, promocao } from "./planos";
-
 export type Pergunta = { pergunta: string; resposta: string };
-
-const faixa = faixaDePreco();
 
 export const faq: Pergunta[] = [
   {
@@ -12,7 +8,7 @@ export const faq: Pergunta[] = [
   {
     pergunta: "Em quanto tempo fica pronto?",
     resposta:
-      "Depende do plano: 7 dias no Órbita Baixa, 14 no Órbita e 21 no Galáxia, contados a partir de quando a gente recebe suas fotos e informações. Tem entrega expressa, na metade do prazo, por +30%.",
+      "A partir de 7 dias, contados de quando a gente recebe suas fotos e informações. O prazo certinho depende do tamanho do site e é combinado antes de começar.",
   },
   {
     pergunta: "O site funciona no celular?",
@@ -26,7 +22,7 @@ export const faq: Pergunta[] = [
   {
     pergunta: "Posso pedir alterações depois?",
     resposta:
-      "Pode sim! Cada plano inclui de 1 a 3 rodadas de ajustes antes da entrega. Depois que o site está no ar, a manutenção opcional (R$ 69/mês) cobre até 2 alterações por mês.",
+      "Pode sim! As rodadas de ajuste antes da entrega são combinadas no orçamento. Depois que o site está no ar, a manutenção opcional (R$ 69/mês) cobre até 2 alterações por mês.",
   },
   {
     pergunta: "Preciso contratar a manutenção?",
@@ -36,7 +32,6 @@ export const faq: Pergunta[] = [
   {
     pergunta: "Quanto custa?",
     resposta:
-      (faixa ? `Os planos vão de ${faixa.min} a ${faixa.max}${promocao ? `, já com ${promocao.desconto}% off` : ""}. ` : "") +
-      "Pagamento único e sem mensalidade obrigatória: 50% no início e 50% na entrega, no Pix. O domínio fica no seu nome e é pago por você. Na dúvida, chama no WhatsApp que a gente te ajuda a escolher.",
+      "Depende do que seu negócio precisa, e a gente monta uma oferta que caiba no seu bolso. Chama no WhatsApp que a gente te passa um orçamento rapidinho e sem compromisso. O domínio fica no seu nome e é pago por você.",
   },
 ];

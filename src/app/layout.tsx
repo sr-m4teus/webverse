@@ -3,7 +3,6 @@ import { JetBrains_Mono, Manrope } from "next/font/google";
 import localFont from "next/font/local";
 import { Analytics } from "@/components/Analytics";
 import { site } from "@/config/site";
-import { faixaDePreco } from "@/content/planos";
 import "./globals.css";
 
 // Unbounded 800 estática (22 KB) em vez da variável do Google (51 KB): é a
@@ -56,8 +55,6 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const faixa = faixaDePreco();
-
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -69,7 +66,6 @@ const jsonLd = {
   email: site.email,
   sameAs: [site.instagram],
   areaServed: "BR",
-  ...(faixa && { priceRange: `${faixa.min} - ${faixa.max}` }),
   knowsLanguage: "pt-BR",
 };
 

@@ -42,7 +42,8 @@ Todo texto fica em `src/config/` e `src/content/`. Não precisa mexer nos compon
 | Textos de todas as seções (hero, problema, como funciona, level up, CTA...) | `src/content/textos.ts` |
 | Portfólio | `src/content/portfolio.ts` + imagens em `public/portfolio/` |
 | Depoimentos (a seção só aparece quando tiver pelo menos 1) | `src/content/depoimentos.ts` |
-| Planos, extras, manutenção e condições de pagamento | `src/content/planos.ts` |
+| Seção de preço: texto da oferta sob medida | `src/content/textos.ts` (`precoTextos`) |
+| Manutenção mensal e condições (domínio, hospedagem) | `src/content/preco.ts` |
 | Perguntas frequentes | `src/content/faq.ts` |
 | Cores e fontes | `src/app/globals.css` (bloco `@theme`) e `src/app/layout.tsx` |
 | Logo e símbolo | `public/brand/` |
@@ -114,14 +115,13 @@ export const depoimentos: Depoimento[] = [
 
 Use só depoimentos reais, com autorização do cliente.
 
-### Planos e preços
+### Preço e manutenção
 
-Tudo fica em `src/content/planos.ts`: os planos (nome, preço, prazo, o que inclui), os extras, a manutenção e as condições de pagamento. O botão de cada plano abre o WhatsApp com a mensagem "quero o plano …".
+O site não mostra planos nem preços de criação: a seção **Preço** convida a pedir um orçamento ("uma oferta que caiba no seu bolso") e mostra só a **manutenção mensal (opcional)**.
 
-- `destaque: "RECOMENDADO"` põe borda e selo no cartão. Apague a linha para tirar.
-- `preco: null` troca o preço por "Orçamento pelo WhatsApp".
-- **Promoção:** `promocao` (no mesmo arquivo) aplica o desconto em todos os planos: mostra o preço antigo riscado, o novo preço, o selo `-30%` e uma faixa acima dos cartões. Muda o percentual em `desconto`. Para encerrar, troque por `promocao = null`. O campo `ate` ("AAAA-MM-DD") só exibe "Válida até…": como o site é estático, **a promoção não sai do ar sozinha**. A resposta "Quanto custa?" do FAQ e o `priceRange` do Google se ajustam automaticamente.
-- Se mudar prazos ou preços, revise também as respostas de "Em quanto tempo fica pronto?" e "Quanto custa?" em `src/content/faq.ts`.
+- Textos da oferta, itens e mensagem do botão do WhatsApp: `precoTextos` em `src/content/textos.ts`.
+- Valor, itens da manutenção e as condições (domínio, hospedagem): `src/content/preco.ts`.
+- Se mudar o valor da manutenção, revise também as respostas do FAQ que citam R$ 69 (`src/content/faq.ts`).
 
 ---
 
