@@ -104,9 +104,8 @@ const arte = h(
     h(
       "div",
       { style: { display: "flex", flexWrap: "wrap", fontSize: 66, lineHeight: 1.05, letterSpacing: "-0.02em", color: "#F4F3EE" } },
-      ...["Seu", "negócio", "já", "tem", "um"].map((p) => h("span", { style: { marginRight: 20 } }, p)),
-      h("span", { style: { marginRight: 20, color: "#CCFF3D" } }, "planeta"),
-      ...["nesse", "universo?"].map((p) => h("span", { style: { marginRight: 20 } }, p)),
+      ...["O", "sistema", "que", "faz", "seu", "comércio"].map((p) => h("span", { style: { marginRight: 20 } }, p)),
+      h("span", { style: { marginRight: 20, color: "#CCFF3D" } }, "girar."),
     ),
     h(
       "div",

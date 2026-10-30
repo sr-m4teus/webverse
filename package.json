@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "imagens": "node scripts/gerar-imagens.mjs",
-    "exemplos": "node scripts/capturar-exemplos.mjs"
+    "imagens": "node scripts/gerar-imagens.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.48.0",

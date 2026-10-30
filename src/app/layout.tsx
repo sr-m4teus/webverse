@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: site.nome,
     title: site.titulo,
     description: site.descricao,
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Webverse: Seu negócio já tem um planeta nesse universo?" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Webverse: o sistema que faz seu comércio girar" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -57,7 +57,7 @@ export const viewport: Viewport = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "Organization",
   name: site.nome,
   description: site.descricao,
   url: site.dominio,

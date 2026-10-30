@@ -4,14 +4,13 @@ export const site = {
   instagram: "https://instagram.com/usewebverse",
   instagramHandle: "@usewebverse",
   whatsapp: "5577998612496",
-  mensagemWhatsapp: "Oi! Vim pelo site e quero colocar meu negócio em órbita 🪐",
+  mensagemWhatsapp: "Oi! Vim pelo site e quero conhecer os sistemas da Webverse pra minha loja 🪐",
   email: "usewebverse@gmail.com",
-  prazoDias: 7,
 
-  titulo: "Webverse | Sites para quem empreende",
+  titulo: "Webverse | Sistemas para o comércio",
   descricao:
-    "Seu negócio no Google, no celular e com botão pro WhatsApp. Site com a sua cara, no ar a partir de 7 dias.",
-  slogan: "Sites para quem empreende",
+    "Caixa, estoque, comanda, delivery e nota fiscal (NFC-e) para mercados, padarias, lojas e restaurantes. Funciona sem internet, com instalação e suporte pelo WhatsApp.",
+  slogan: "Sistemas para o comércio",
 
   // Analytics: deixe `null` para não carregar nada.
   // Plausible: { tipo: "plausible", dominio: "usewebverse.com.br" }

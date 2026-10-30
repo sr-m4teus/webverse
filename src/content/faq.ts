@@ -2,36 +2,38 @@ export type Pergunta = { pergunta: string; resposta: string };
 
 export const faq: Pergunta[] = [
   {
-    pergunta: "Preciso entender de tecnologia?",
-    resposta: "Nada. Você manda as informações e a gente cuida de tudo.",
-  },
-  {
-    pergunta: "Em quanto tempo fica pronto?",
+    pergunta: "Precisa de internet pra funcionar?",
     resposta:
-      "A partir de 7 dias, contados de quando a gente recebe suas fotos e informações. O prazo certinho depende do tamanho do site e é combinado antes de começar.",
+      "Não. Os sistemas de caixa rodam no computador da loja e continuam vendendo sem internet. A internet só é usada para a nota fiscal, e se ela cair a nota sai em contingência.",
   },
   {
-    pergunta: "O site funciona no celular?",
-    resposta: "Funciona e fica perfeito. A maioria dos seus clientes vai acessar por lá.",
-  },
-  {
-    pergunta: "Vou aparecer no Google?",
+    pergunta: "Funciona com o leitor, a impressora e a balança que eu já tenho?",
     resposta:
-      "A gente configura tudo para o Google encontrar seu site. Aparecer nas primeiras posições depende também de tempo e concorrência.",
+      "Na maioria dos casos, sim. Leitor de código de barras USB, impressora térmica e impressora de etiquetas comuns funcionam. A gente confere seu equipamento antes de instalar.",
   },
   {
-    pergunta: "Posso pedir alterações depois?",
+    pergunta: "Emite nota fiscal?",
     resposta:
-      "Pode sim! As rodadas de ajuste antes da entrega são combinadas no orçamento. Depois que o site está no ar, a manutenção opcional (R$ 69/mês) cobre até 2 alterações por mês.",
+      "Sim. A NFC-e sai do próprio caixa, autorizada pela SEFAZ-BA. Você precisa do certificado digital A1 e do CSC, e a gente ajuda a conseguir os dois.",
   },
   {
-    pergunta: "Preciso contratar a manutenção?",
+    pergunta: "Já uso outro sistema. Dá pra trocar?",
     resposta:
-      "Não, ela é opcional. Sem a manutenção, a hospedagem e as alterações depois da entrega ficam por sua conta. Com ela, por R$ 69/mês, a gente cuida da hospedagem, mantém o domínio em dia e faz até 2 alterações por mês.",
+      "Dá. A gente traz seus produtos e preços e continua a numeração das notas de onde o sistema antigo parou.",
+  },
+  {
+    pergunta: "E se o computador quebrar?",
+    resposta:
+      "O sistema faz backup automático a cada fechamento de caixa. Com a cópia em um pendrive ou na nuvem, a gente reinstala e você volta de onde parou.",
+  },
+  {
+    pergunta: "Minha equipe vai conseguir usar?",
+    resposta:
+      "Vai. As telas são feitas para o balcão, com poucos campos e atalhos de teclado. E o treinamento é feito na sua loja, com o sistema já valendo.",
   },
   {
     pergunta: "Quanto custa?",
     resposta:
-      "Depende do que seu negócio precisa, e a gente monta uma oferta que caiba no seu bolso. Chama no WhatsApp que a gente te passa um orçamento rapidinho e sem compromisso. O domínio fica no seu nome e é pago por você.",
+      "Depende do sistema e de quantos caixas sua loja tem. A licença pode ser mensal, anual ou vitalícia. Chama no WhatsApp que a gente passa o orçamento rapidinho e sem compromisso.",
   },
 ];

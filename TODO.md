@@ -2,7 +2,7 @@
 
 ## Quando tiver
 
-- [ ] **Portfólio real**: `src/content/portfolio.ts`. Os 3 itens `exemplo: true` apontam para sites mock em `public/exemplos/` (Padaria do Bairro, Studio Bela, Oficina Motor Forte, nomes fictícios). Quando entrar cliente real, adicione o item e decida se mantém os exemplos.
+- [ ] **Salão & Delivery**: tirar `emBreve` em `src/content/produtos.ts` quando o sistema estiver em uso.
 - [ ] **Depoimentos**: `src/content/depoimentos.ts`. A seção fica oculta até ter pelo menos 1 depoimento real.
 - [ ] **Analytics** (opcional): `src/config/site.ts` → `analytics`.
 

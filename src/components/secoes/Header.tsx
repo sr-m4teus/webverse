@@ -5,9 +5,9 @@ import { Botao } from "@/components/ui/Botao";
 import { Container } from "@/components/ui/Container";
 
 const links = [
+  { href: "#sistemas", texto: "Sistemas" },
+  { href: "#diferenciais", texto: "Diferenciais" },
   { href: "#como-funciona", texto: "Como funciona" },
-  { href: "#o-que-vem", texto: "O que vem" },
-  { href: "#portfolio", texto: "Portfólio" },
   { href: "#preco", texto: "Preço" },
   { href: "#duvidas", texto: "Dúvidas" },
 ];

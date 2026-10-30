@@ -4,68 +4,106 @@ import type { Trecho } from "./tipos";
 // palavra que aparece na cor da marca.
 
 export const hero = {
-  selo: "NOVO NO UNIVERSO",
-  titulo: ["Seu negócio já tem um ", { destaque: "planeta" }, " nesse universo?"] as Trecho[],
+  selo: "SISTEMAS PARA O COMÉRCIO",
+  titulo: ["O sistema que faz seu comércio ", { destaque: "girar." }] as Trecho[],
   subtitulo:
-    "A gente cria sites para quem empreende. Com a cara do seu negócio, no ar a partir de 7 dias e sem complicação.",
+    "Caixa, estoque, comanda, delivery e nota fiscal para mercados, padarias, lojas e restaurantes. Funciona até sem internet, e quem instala e dá suporte é a gente.",
   botaoPrimario: "Chama no WhatsApp",
-  botaoSecundario: "Ver como funciona",
+  botaoSecundario: "Ver os sistemas",
+};
+
+/** Tela de caixa ilustrativa do hero. Itens genéricos, sem marca nem cliente. */
+export const caixaExemplo = {
+  janela: "caixa-01 · aberto",
+  offline: "OFFLINE OK",
+  itens: [
+    { nome: "Pão francês", qtd: "0,750 kg", total: 11.18 },
+    { nome: "Leite integral 1L", qtd: "2 un", total: 11.98 },
+    { nome: "Café torrado 500g", qtd: "1 un", total: 18.9 },
+    { nome: "Queijo muçarela", qtd: "0,320 kg", total: 15.65 },
+  ],
+  rotuloTotal: "TOTAL",
+  formas: ["Pix", "Dinheiro", "Cartão"],
+  nota: "NFC-e autorizada",
 };
 
 export const problema = {
-  selo: "ERRO 404",
-  titulo: ["Seu cliente te procurou no Google. ", { destaque: "Achou?" }] as Trecho[],
-  texto: "Antes de ir até você, a pessoa pesquisa. Se não aparece nada, ela vai no concorrente que aparece.",
-  busca: "padaria perto de mim",
-  resultadoNegativo: "nenhum resultado para o seu negócio",
-  resultadoConcorrentes: "3 concorrentes aparecendo",
+  selo: "CAIXA TRAVADO",
+  titulo: ["Fila no caixa e estoque que ", { destaque: "não bate?" }] as Trecho[],
+  texto:
+    "Sistema que trava quando a internet cai, mensalidade cara, suporte que não atende e um monte de tela que ninguém usa. O seu negócio merece coisa melhor.",
+  log: [
+    "internet caiu: caixa parado",
+    "estoque no sistema: 30 · na prateleira: 8",
+    "suporte: aguarde na fila (posição 47)",
+    "fechamento do caixa: diferença de R$ 112,00",
+  ],
+  solucao: "webverse: resolvendo",
 };
 
-export const oQueVem = {
-  selo: "INVENTÁRIO",
-  titulo: ["O que vem no ", { destaque: "seu site" }] as Trecho[],
-  subtitulo: "Tudo pronto para seu cliente te achar e te chamar. Sem você precisar mexer em nada.",
-  comando: "webverse --incluso",
+export const produtosTextos = {
+  selo: "SISTEMAS",
+  titulo: ["Um sistema pra cada ", { destaque: "balcão" }] as Trecho[],
+  subtitulo:
+    "Feitos com quem está no caixa todo dia. Você começa com o que precisa e a gente ajusta ao jeito da sua loja.",
+  paraQuem: "Pra quem",
+  emBreve: "EM BREVE",
+  botao: "Quero conhecer",
+};
+
+export const segmentos = {
+  selo: "PRA QUEM",
   itens: [
-    "página com a cara do seu negócio",
-    "botão direto pro WhatsApp",
-    "aparecendo no Google",
-    "perfeito no celular",
-    "endereço próprio (.com.br)",
-    "link pra bio do Instagram",
+    "Mercados e mercearias",
+    "Depósitos e material de construção",
+    "Padarias e cafeterias",
+    "Hamburguerias e pizzarias",
+    "Lojas de roupas e móveis",
+    "Clínicas e consultórios",
+  ],
+};
+
+export const diferenciais = {
+  selo: "POR QUE A WEBVERSE",
+  titulo: ["Sem travar, sem ", { destaque: "enrolação" }] as Trecho[],
+  subtitulo: "O que muda quando o sistema é feito pro seu dia a dia, e não pra uma planilha de vendas.",
+  itens: [
+    {
+      titulo: "Funciona sem internet",
+      texto: "O caixa roda no computador da loja. A internet caiu, a venda continua.",
+    },
+    {
+      titulo: "Feito pro balcão",
+      texto: "Leitor de código de barras, atalhos de teclado, balança e impressora térmica. Venda em segundos.",
+    },
+    {
+      titulo: "Nota fiscal integrada",
+      texto: "A NFC-e sai do próprio caixa, autorizada pela SEFAZ, sem programa à parte.",
+    },
+    {
+      titulo: "Seus dados protegidos",
+      texto: "Backup automático todo fechamento de caixa. Cada operador com seu PIN e seu perfil.",
+    },
+    {
+      titulo: "Suporte de perto",
+      texto: "A gente instala, cadastra, treina sua equipe e atende no WhatsApp.",
+    },
+    {
+      titulo: "Sob medida",
+      texto: "Precisa de uma tela, um relatório ou um jeito diferente? A gente ajusta o sistema pra você.",
+    },
   ],
 };
 
 export const comoFunciona = {
   selo: "COMO FUNCIONA",
-  titulo: ["Missão em ", { destaque: "3 fases" }] as Trecho[],
+  titulo: ["Do primeiro papo ao caixa ", { destaque: "rodando" }] as Trecho[],
   fases: [
-    { titulo: "Você chama no WhatsApp", texto: "Conta do seu negócio e do que precisa." },
-    { titulo: "Manda fotos e infos", texto: "Logo, fotos, horários, cardápio ou serviços." },
-    { titulo: "Seu site em órbita", texto: "No ar a partir de 7 dias. Missão cumprida." },
+    { titulo: "Conversa", texto: "Você conta como sua loja funciona hoje e o que precisa resolver." },
+    { titulo: "Implantação", texto: "A gente instala, cadastra os produtos e configura leitor, impressora e balança." },
+    { titulo: "Treinamento", texto: "Sua equipe aprende no próprio balcão, com o sistema já valendo." },
+    { titulo: "Suporte", texto: "Ficou dúvida ou quer mudar algo? É só chamar no WhatsApp." },
   ],
-};
-
-export const levelUp = {
-  selo: "LEVEL UP",
-  titulo: ["Instagram é ótimo. Com site, é ", { destaque: "outro nível." }] as Trecho[],
-  nivel1: {
-    rotulo: "LV. 1 · SÓ INSTAGRAM",
-    itens: ["Só te acha quem já te segue", "Não aparece no Google", "Informação perdida no feed", "Depende do algoritmo"],
-  },
-  nivel2: {
-    rotulo: "LV. 2 · INSTA + SITE",
-    itens: ["Te acha quem ainda não te conhece", "Aparece no Google", "Tudo organizado num link", "Um endereço que é seu"],
-  },
-};
-
-export const portfolioTextos = {
-  selo: "PORTFÓLIO",
-  titulo: [{ destaque: "Planetas" }, " que a gente já colocou em órbita"] as Trecho[],
-  seloExemplo: "EXEMPLO",
-  verSite: "Ver site",
-  verExemplo: "Ver exemplo",
-  emBreve: "Em breve",
 };
 
 export const depoimentosTextos = {
@@ -75,19 +113,16 @@ export const depoimentosTextos = {
 
 export const precoTextos = {
   selo: "PREÇO",
-  titulo: ["Um site que cabe no seu ", { destaque: "bolso" }] as Trecho[],
-  subtitulo: "Sem pacote engessado. A gente monta o site em cima do que seu negócio precisa.",
-  ofertaTitulo: "Oferta sob medida",
-  ofertaTexto:
-    "A gente faz um site com uma oferta que caiba no seu bolso. Conta o que você precisa e recebe um orçamento rápido e sem compromisso.",
-  ofertaItens: [
-    "Preço combinado antes de começar",
-    "Proposta sob medida pro seu negócio",
-    "Resposta rápida pelo WhatsApp",
-  ],
-  ofertaBotao: "Pedir meu orçamento",
-  ofertaMensagem: "Oi! Vim pelo site e quero um orçamento pro meu negócio 🪐",
-  manutencaoSubtitulo: "Pra você não se preocupar com nada depois que o site estiver no ar.",
+  titulo: ["Licença do ", { destaque: "seu jeito" }] as Trecho[],
+  subtitulo: "Sem taxa escondida e sem contrato de fidelidade. Você escolhe como prefere pagar.",
+  sistemasTitulo: "Sistemas",
+  sistemasTexto:
+    "O valor depende do sistema e de quantos caixas sua loja tem. A gente passa o orçamento rápido e sem compromisso.",
+  sistemasBotao: "Pedir meu orçamento",
+  sistemasMensagem: "Oi! Vim pelo site e quero um orçamento de sistema pra minha loja 🪐",
+  sitesTitulo: "Sites",
+  sitesTexto: "Site sob medida com orçamento combinado antes de começar.",
+  manutencaoSubtitulo: "Manutenção opcional depois que o site estiver no ar:",
 };
 
 export const duvidas = {
@@ -97,8 +132,8 @@ export const duvidas = {
 
 export const ctaFinal = {
   selo: "PRESS START",
-  titulo: ["Bora colocar seu negócio em órbita?"] as Trecho[],
-  texto: "Chama a gente no WhatsApp. Seu site pode estar no ar a partir de 7 dias.",
+  titulo: ["Bora colocar seu comércio em órbita?"] as Trecho[],
+  texto: "Chama a gente no WhatsApp e conta como funciona sua loja. A gente mostra o sistema rodando.",
   botaoWhatsapp: "Chama no WhatsApp",
   botaoInstagram: "Segue no Instagram",
 };

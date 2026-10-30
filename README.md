@@ -1,6 +1,6 @@
 # Webverse · usewebverse.com.br
 
-Site institucional da Webverse: sites para quem empreende. Página única, 100% estática, feita para converter visitas do Instagram (@usewebverse) em conversas no WhatsApp.
+Site institucional da Webverse: sistemas para o comércio (caixa, estoque, comanda, delivery, nota fiscal) e sites. Página única, 100% estática, feita para converter visitas do Instagram (@usewebverse) em conversas no WhatsApp.
 
 - **Stack:** Next.js 15 (App Router, `output: "export"`), TypeScript, Tailwind CSS v4.
 - **Sem** bibliotecas de UI, cookies ou tracking. Ícones: `lucide-react`.
@@ -28,7 +28,6 @@ Abra http://localhost:3000.
 | `npx serve out` | Serve a pasta `out/` para testar o build final |
 | `npm run lint` | Verifica o código |
 | `npm run imagens` | Regenera favicon, ícones e imagem de compartilhamento (só se a marca mudar) |
-| `npm run exemplos` | Tira os prints dos sites de exemplo para o portfólio |
 
 ---
 
@@ -39,11 +38,11 @@ Todo texto fica em `src/config/` e `src/content/`. Não precisa mexer nos compon
 | O que | Arquivo |
 |---|---|
 | WhatsApp, mensagem pronta, Instagram, e-mail, título e descrição do Google | `src/config/site.ts` |
-| Textos de todas as seções (hero, problema, como funciona, level up, CTA...) | `src/content/textos.ts` |
-| Portfólio | `src/content/portfolio.ts` + imagens em `public/portfolio/` |
+| Textos de todas as seções (hero, problema, diferenciais, como funciona, CTA...) | `src/content/textos.ts` |
+| Sistemas (cards da seção "Sistemas") | `src/content/produtos.ts` |
 | Depoimentos (a seção só aparece quando tiver pelo menos 1) | `src/content/depoimentos.ts` |
-| Seção de preço: texto da oferta sob medida | `src/content/textos.ts` (`precoTextos`) |
-| Manutenção mensal e condições (domínio, hospedagem) | `src/content/preco.ts` |
+| Seção de preço: textos | `src/content/textos.ts` (`precoTextos`) |
+| Tipos de licença, o que vem com o sistema, manutenção dos sites | `src/content/preco.ts` |
 | Perguntas frequentes | `src/content/faq.ts` |
 | Cores e fontes | `src/app/globals.css` (bloco `@theme`) e `src/app/layout.tsx` |
 | Logo e símbolo | `public/brand/` |
@@ -68,42 +67,13 @@ Preencha `whatsapp` só com números: DDI + DDD + número (ex.: `5531999998888`)
 
 ---
 
-## Adicionar um item ao portfólio
+## Sistemas
 
-1. Tire um print do site do cliente, de preferência 1200×750 (proporção 16:10), e salve em `public/portfolio/`, por exemplo `public/portfolio/padaria-pao-quente.webp`. Use `.webp` ou `.jpg` para o arquivo ficar leve.
-2. Em `src/content/portfolio.ts`, adicione um item no array:
+Cada card da seção "Sistemas" é um item de `src/content/produtos.ts` (nome, resumo, pra quem, descrição, destaques, ícone e mensagem do WhatsApp). `emBreve: true` mostra o selo "EM BREVE".
 
-   ```ts
-   {
-     nome: "Padaria Pão Quente",
-     tipo: "Padaria",
-     imagem: "/portfolio/padaria-pao-quente.webp",
-     alt: "Site da Padaria Pão Quente com cardápio e botão do WhatsApp",
-     url: "https://padariapaoquente.com.br",
-   },
-   ```
+**Nunca coloque nome de cliente** no site: descreva o tipo de negócio ("depósito de material de construção"), não quem usa.
 
-3. Quando entrarem clientes reais, apague os itens com `exemplo: true` (e, se quiser, os sites de exemplo, veja abaixo).
-
-Sem `url` (`url: null`), o cartão mostra "Em breve" em vez do botão "Ver site".
-
-### Sites de exemplo (mocks)
-
-Os três itens de exemplo do portfólio apontam para sites mock de verdade, publicados no próprio domínio:
-
-| Exemplo | Endereço | Arquivo |
-|---|---|---|
-| Padaria do Bairro | `/exemplos/padaria` | `public/exemplos/padaria/index.html` |
-| Studio Bela | `/exemplos/salao` | `public/exemplos/salao/index.html` |
-| Oficina Motor Forte | `/exemplos/oficina` | `public/exemplos/oficina/index.html` |
-
-- São HTML puro com CSS embutido, cada um com a identidade do negócio fictício. As fontes ficam em `public/exemplos/_fontes/` (sem requisição externa).
-- Todos têm `noindex` (não aparecem no Google) e uma faixa no topo avisando que é um exemplo da Webverse.
-- Os botões de WhatsApp dos mocks levam para o **WhatsApp da Webverse** com a mensagem "Vi o site de exemplo da … e quero um assim". **Se o número mudar**, troque `5577998612496` nos três arquivos, além do `src/config/site.ts`.
-- Depois de editar um mock, rode `npm run exemplos` para gerar de novo os prints do portfólio (`public/portfolio/exemplo-*.webp`). O script usa o Google Chrome instalado no computador.
-- Para criar um exemplo novo: crie `public/exemplos/<nome>/index.html`, rode `npm run exemplos` e adicione o item em `src/content/portfolio.ts` com `url: "/exemplos/<nome>"` e `exemplo: true`.
-
-### Adicionar um depoimento
+## Adicionar um depoimento
 
 Em `src/content/depoimentos.ts`:
 
@@ -205,7 +175,6 @@ O domínio foi registrado pela Hostinger, então o DNS é editado no painel dela
 public/
   brand/          logo-horizontal.svg, simbolo.svg (oficiais, não editar)
   icons/          ícones do app (gerados)
-  portfolio/      imagens do portfólio
   og.png          imagem de compartilhamento 1200×630 (gerada)
 scripts/
   gerar-imagens.mjs   gera favicon, ícones e og.png a partir da marca
