@@ -4,7 +4,7 @@ export const faq: Pergunta[] = [
   {
     pergunta: "Precisa de internet pra funcionar?",
     resposta:
-      "Não. Os sistemas de caixa rodam no computador da loja e continuam vendendo sem internet. A internet só é usada para a nota fiscal, e se ela cair a nota sai em contingência.",
+      "Não. Os sistemas de caixa rodam no computador do seu negócio e continuam vendendo sem internet. A internet só é usada para a nota fiscal, e se ela cair a nota sai em contingência.",
   },
   {
     pergunta: "Funciona com o leitor, a impressora e a balança que eu já tenho?",
@@ -29,11 +29,11 @@ export const faq: Pergunta[] = [
   {
     pergunta: "Minha equipe vai conseguir usar?",
     resposta:
-      "Vai. As telas são feitas para o balcão, com poucos campos e atalhos de teclado. E o treinamento é feito na sua loja, com o sistema já valendo.",
+      "Vai. As telas são feitas para o balcão, com poucos campos e atalhos de teclado. E o treinamento é feito no seu negócio, com o sistema já valendo.",
   },
   {
     pergunta: "Quanto custa?",
     resposta:
-      "Depende do sistema e de quantos caixas sua loja tem. A licença pode ser mensal, anual ou vitalícia. Chama no WhatsApp que a gente passa o orçamento rapidinho e sem compromisso.",
+      "Depende do sistema e de quantos caixas seu negócio tem. A licença pode ser mensal, anual ou vitalícia. Chama no WhatsApp que a gente passa o orçamento rapidinho e sem compromisso.",
   },
 ];

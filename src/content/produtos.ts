@@ -27,7 +27,7 @@ export const produtos: Produto[] = [
     resumo: "Caixa e estoque para o varejo",
     paraQuem: "Mercados, mercearias, depósitos e lojas de material de construção",
     descricao:
-      "Frente de caixa rápida no leitor de código de barras e estoque que bate de verdade. Roda no computador da loja, sem depender de internet.",
+      "Frente de caixa rápida no leitor de código de barras e estoque que bate de verdade. Roda no computador do seu negócio, sem depender de internet.",
     destaques: [
       "Caixa com Pix, dinheiro e troco, sangria e fechamento",
       "Venda por peso, entrada de nota e inventário",

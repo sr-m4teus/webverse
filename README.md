@@ -42,7 +42,7 @@ Todo texto fica em `src/config/` e `src/content/`. Não precisa mexer nos compon
 | Sistemas (cards da seção "Sistemas") | `src/content/produtos.ts` |
 | Depoimentos (a seção só aparece quando tiver pelo menos 1) | `src/content/depoimentos.ts` |
 | Seção de preço: textos | `src/content/textos.ts` (`precoTextos`) |
-| Tipos de licença, o que vem com o sistema, manutenção dos sites | `src/content/preco.ts` |
+| Tipos de licença e o que vem com o sistema | `src/content/preco.ts` |
 | Perguntas frequentes | `src/content/faq.ts` |
 | Cores e fontes | `src/app/globals.css` (bloco `@theme`) e `src/app/layout.tsx` |
 | Logo e símbolo | `public/brand/` |
@@ -85,13 +85,12 @@ export const depoimentos: Depoimento[] = [
 
 Use só depoimentos reais, com autorização do cliente.
 
-### Preço e manutenção
+### Preço
 
-O site não mostra planos nem preços de criação: a seção **Preço** convida a pedir um orçamento ("uma oferta que caiba no seu bolso") e mostra só a **manutenção mensal (opcional)**.
+O site não mostra valores: a seção **Preço** mostra os tipos de licença (mensal, anual, vitalícia) e convida a pedir um orçamento.
 
-- Textos da oferta, itens e mensagem do botão do WhatsApp: `precoTextos` em `src/content/textos.ts`.
-- Valor, itens da manutenção e as condições (domínio, hospedagem): `src/content/preco.ts`.
-- Se mudar o valor da manutenção, revise também as respostas do FAQ que citam R$ 69 (`src/content/faq.ts`).
+- Textos e mensagem do botão do WhatsApp: `precoTextos` em `src/content/textos.ts`.
+- Tipos de licença e o que vem com o sistema: `src/content/preco.ts`.
 
 ---
 

@@ -45,7 +45,7 @@ export const produtosTextos = {
   selo: "SISTEMAS",
   titulo: ["Um sistema pra cada ", { destaque: "balcão" }] as Trecho[],
   subtitulo:
-    "Feitos com quem está no caixa todo dia. Você começa com o que precisa e a gente ajusta ao jeito da sua loja.",
+    "Feitos com quem está no caixa todo dia. Você começa com o que precisa e a gente ajusta ao jeito do seu negócio.",
   paraQuem: "Pra quem",
   emBreve: "EM BREVE",
   botao: "Quero conhecer",
@@ -70,7 +70,7 @@ export const diferenciais = {
   itens: [
     {
       titulo: "Funciona sem internet",
-      texto: "O caixa roda no computador da loja. A internet caiu, a venda continua.",
+      texto: "O caixa roda no computador do seu negócio. A internet caiu, a venda continua.",
     },
     {
       titulo: "Feito pro balcão",
@@ -99,7 +99,7 @@ export const comoFunciona = {
   selo: "COMO FUNCIONA",
   titulo: ["Do primeiro papo ao caixa ", { destaque: "rodando" }] as Trecho[],
   fases: [
-    { titulo: "Conversa", texto: "Você conta como sua loja funciona hoje e o que precisa resolver." },
+    { titulo: "Conversa", texto: "Você conta como seu negócio funciona hoje e o que precisa resolver." },
     { titulo: "Implantação", texto: "A gente instala, cadastra os produtos e configura leitor, impressora e balança." },
     { titulo: "Treinamento", texto: "Sua equipe aprende no próprio balcão, com o sistema já valendo." },
     { titulo: "Suporte", texto: "Ficou dúvida ou quer mudar algo? É só chamar no WhatsApp." },
@@ -115,14 +115,10 @@ export const precoTextos = {
   selo: "PREÇO",
   titulo: ["Licença do ", { destaque: "seu jeito" }] as Trecho[],
   subtitulo: "Sem taxa escondida e sem contrato de fidelidade. Você escolhe como prefere pagar.",
-  sistemasTitulo: "Sistemas",
-  sistemasTexto:
-    "O valor depende do sistema e de quantos caixas sua loja tem. A gente passa o orçamento rápido e sem compromisso.",
-  sistemasBotao: "Pedir meu orçamento",
-  sistemasMensagem: "Oi! Vim pelo site e quero um orçamento de sistema pra minha loja 🪐",
-  sitesTitulo: "Sites",
-  sitesTexto: "Site sob medida com orçamento combinado antes de começar.",
-  manutencaoSubtitulo: "Manutenção opcional depois que o site estiver no ar:",
+  texto:
+    "O valor depende do sistema e de quantos caixas seu negócio tem. A gente passa o orçamento rápido e sem compromisso.",
+  botao: "Pedir meu orçamento",
+  mensagem: "Oi! Vim pelo site e quero um orçamento de sistema pro meu negócio 🪐",
 };
 
 export const duvidas = {
@@ -133,7 +129,7 @@ export const duvidas = {
 export const ctaFinal = {
   selo: "PRESS START",
   titulo: ["Bora colocar seu comércio em órbita?"] as Trecho[],
-  texto: "Chama a gente no WhatsApp e conta como funciona sua loja. A gente mostra o sistema rodando.",
+  texto: "Chama a gente no WhatsApp e conta como funciona seu negócio. A gente mostra o sistema rodando.",
   botaoWhatsapp: "Chama no WhatsApp",
   botaoInstagram: "Segue no Instagram",
 };

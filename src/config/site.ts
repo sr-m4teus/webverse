@@ -4,7 +4,7 @@ export const site = {
   instagram: "https://instagram.com/usewebverse",
   instagramHandle: "@usewebverse",
   whatsapp: "5577998612496",
-  mensagemWhatsapp: "Oi! Vim pelo site e quero conhecer os sistemas da Webverse pra minha loja 🪐",
+  mensagemWhatsapp: "Oi! Vim pelo site e quero conhecer os sistemas da Webverse pro meu negócio 🪐",
   email: "usewebverse@gmail.com",
 
   titulo: "Webverse | Sistemas para o comércio",
